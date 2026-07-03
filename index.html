@@ -27,7 +27,7 @@
   body{ margin:0; background:#f7f2ea; font-family:var(--font-body); color:var(--text-body); -webkit-font-smoothing:antialiased; }
   a{ color:inherit; }
   table{ border-collapse:collapse; width:100%; }
-  th,td{ text-align:left; padding:10px 12px; font-size:14px; }
+  th,td{ text-align:left; padding:10px 12px; font-size:16px; }
 
   @keyframes grow{ from{ transform:scaleX(0); } to{ transform:scaleX(1); } }
   .seg-anim{ transform-origin:left center; animation:grow .9s cubic-bezier(.4,0,.2,1) both; }
@@ -41,11 +41,11 @@
   .avoid-break{ break-inside:avoid; page-break-inside:avoid; }
   .sec-head{ display:flex; align-items:flex-start; gap:14px; }
   .sec-bar{ width:4px; align-self:stretch; min-height:2.4em; background:var(--sage-500); border-radius:999px; margin-top:4px; flex:none; }
-  .sec-eyebrow{ font-family:var(--font-sans); font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage-700); font-weight:500; }
+  .sec-eyebrow{ font-family:var(--font-sans); font-size:16px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage-700); font-weight:500; }
   .sec-title{ margin:4px 0 0; font-family:var(--font-sans); font-size:26px; font-weight:700; color:var(--text-heading); letter-spacing:.02em; }
   .sec-rule{ border-bottom:1px solid var(--rule-heading); margin:18px 0 24px; }
   .lead{ margin:0; font-size:16px; line-height:1.9; color:var(--text-body); }
-  .pill{ display:inline-flex; align-items:center; gap:6px; font-family:var(--font-sans); font-size:13px; font-weight:700; padding:4px 12px; border-radius:999px; }
+  .pill{ display:inline-flex; align-items:center; gap:6px; font-family:var(--font-sans); font-size:16px; font-weight:700; padding:4px 12px; border-radius:999px; }
 
   @media print{
     body{ background:#fff; }
@@ -64,7 +64,6 @@
     h1{ font-size:28px !important; }
     .room-block-row{ flex-direction:column; gap:6px !important; }
     .room-block-label{ width:auto !important; }
-    .room-cell{ width:19px; height:19px; font-size:8px; }
   }
   @media (max-width:960px) and (min-width:721px){
     .grid-3,.grid-4{ grid-template-columns:repeat(2,1fr) !important; }
@@ -73,7 +72,7 @@
     .nav-links{ display:none !important; }
   }
 
-  .nav-link{ display:flex; align-items:center; gap:6px; padding:6px 10px; border-radius:6px; text-decoration:none; font-size:13px; font-family:var(--font-sans); color:var(--text-muted); transition:background .16s, color .16s; background:transparent; white-space:nowrap; }
+  .nav-link{ display:flex; align-items:center; gap:6px; padding:6px 10px; border-radius:6px; text-decoration:none; font-size:16px; font-family:var(--font-sans); color:var(--text-muted); transition:background .16s, color .16s; background:transparent; white-space:nowrap; }
   .nav-link:hover{ background:var(--greige-100); color:var(--text-heading); }
   .nav-link.active{ background:var(--greige-100); color:var(--text-heading); }
 
@@ -82,11 +81,11 @@
 
   .faq-item{ border-bottom:1px solid var(--rule-divider); padding:16px 2px; }
   .faq-item:last-child{ border-bottom:none; }
-  .faq-q{ font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--text-heading); display:flex; gap:10px; }
-  .faq-a{ margin:8px 0 0 26px; font-size:14px; line-height:1.8; color:var(--text-muted); }
+  .faq-q{ font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); display:flex; gap:10px; }
+  .faq-a{ margin:8px 0 0 26px; font-size:16px; line-height:1.8; color:var(--text-muted); }
 
-  .history-table{ width:100%; border-collapse:collapse; font-size:12.5px; }
-  .history-table th{ font-family:var(--font-sans); font-size:11.5px; font-weight:700; color:var(--sage-700); text-align:left; padding:8px 10px; border-bottom:2px solid var(--sage-400); white-space:nowrap; }
+  .history-table{ width:100%; border-collapse:collapse; font-size:16px; }
+  .history-table th{ font-family:var(--font-sans); font-size:16px; font-weight:700; color:var(--sage-700); text-align:left; padding:8px 10px; border-bottom:2px solid var(--sage-400); white-space:nowrap; }
   .history-table td{ vertical-align:top; padding:9px 10px; border-bottom:1px solid var(--rule-divider); line-height:1.7; color:var(--text-body); break-inside:avoid; page-break-inside:avoid; }
   .history-table tr:last-child td{ border-bottom:none; }
   .history-year{ font-family:var(--font-sans); font-weight:700; color:var(--sage-700); white-space:nowrap; width:76px; }
@@ -96,16 +95,16 @@
   .history-col-koko{ width:33%; }
 
   .bar-row{ display:flex; align-items:center; gap:10px; margin:10px 0; }
-  .bar-label{ width:150px; flex:none; font-size:13px; color:var(--text-body); line-height:1.5; }
+  .bar-label{ width:150px; flex:none; font-size:16px; color:var(--text-body); line-height:1.5; }
   .bar-track{ flex:1; background:#eae2d4; border-radius:6px; height:22px; overflow:hidden; position:relative; }
   .bar-fill{ height:100%; border-radius:6px; }
-  .bar-value{ width:110px; flex:none; text-align:right; font-family:var(--font-sans); font-size:13px; font-weight:700; color:var(--text-heading); }
+  .bar-value{ width:110px; flex:none; text-align:right; font-family:var(--font-sans); font-size:16px; font-weight:700; color:var(--text-heading); }
 
   .room-block-row{ display:flex; align-items:flex-start; gap:14px; }
-  .room-block-label{ width:70px; flex:none; font-family:var(--font-sans); font-weight:700; font-size:13px; color:var(--text-heading); padding-top:3px; }
+  .room-block-label{ width:70px; flex:none; font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); padding-top:3px; }
   .room-block-groups{ display:flex; gap:16px; flex-wrap:wrap; flex:1; }
   .room-grid{ display:flex; flex-wrap:wrap; gap:3px; max-width:100%; }
-  .room-cell{ width:22px; height:22px; flex:none; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:9px; font-family:var(--font-sans); font-weight:700; border:1px solid rgba(0,0,0,.06); }
+  .room-cell{ width:32px; height:32px; flex:none; border-radius:5px; display:flex; align-items:center; justify-content:center; font-size:16px; font-family:var(--font-sans); font-weight:700; border:1px solid rgba(0,0,0,.06); }
 </style>
 </head>
 <body>
@@ -116,8 +115,8 @@
   <div class="no-print" style="position:sticky; top:0; z-index:20; background:rgba(243,238,231,.92); backdrop-filter:blur(8px); border-bottom:1px solid #ddd6ca;">
     <div style="max-width:1100px; margin:0 auto; padding:10px 24px; display:flex; align-items:center; gap:14px;">
       <div style="display:flex; flex-direction:column; line-height:1.2; flex:none;">
-        <span style="font-family:var(--font-sans); font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500;">Shikaoi Board of Education</span>
-        <span style="font-family:var(--font-sans); font-size:13px; font-weight:700; color:var(--text-heading);">鹿追町教育委員会</span>
+        <span style="font-family:var(--font-sans); font-size:16px; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500;">Shikaoi Board of Education</span>
+        <span style="font-family:var(--font-sans); font-size:16px; font-weight:700; color:var(--text-heading);">鹿追町教育委員会</span>
       </div>
       <nav class="nav-links" style="margin-left:auto; display:flex; gap:2px; overflow-x:auto;">
         <a class="nav-link" data-nav="sec-01" href="#sec-01">01 概要</a>
@@ -130,7 +129,7 @@
         <a class="nav-link" data-nav="sec-08" href="#sec-08">08 事業実績</a>
         <a class="nav-link" data-nav="sec-09" href="#sec-09">09 FAQ</a>
       </nav>
-      <button id="print-btn" style="flex:none; display:flex; align-items:center; gap:7px; padding:7px 14px; border:none; border-radius:6px; background:var(--slate-700); color:#fff; font-family:var(--font-sans); font-size:14px; font-weight:500; cursor:pointer;">
+      <button id="print-btn" style="flex:none; display:flex; align-items:center; gap:7px; padding:7px 14px; border:none; border-radius:6px; background:var(--slate-700); color:#fff; font-family:var(--font-sans); font-size:16px; font-weight:500; cursor:pointer;">
         <i data-lucide="printer" style="width:16px; height:16px;"></i><span>印刷</span>
       </button>
     </div>
@@ -142,34 +141,34 @@
     <!-- HERO -->
     <header style="position:relative; overflow:hidden; background:#f4efe4; border-left:5px solid var(--sage-500); border-bottom:1px solid #e8ded0;">
       <div class="hero-pad" style="position:relative; padding:52px 60px 44px;">
-        <div style="display:flex; align-items:center; gap:12px; font-family:var(--font-sans); font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage-700); font-weight:500;">
+        <div style="display:flex; align-items:center; gap:12px; font-family:var(--font-sans); font-size:16px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage-700); font-weight:500;">
           <span style="width:26px; height:1.5px; background:var(--sage-500);"></span>
           <span>Inspection Briefing · 視察資料</span>
         </div>
         <h1 style="margin:20px 0 0; font-family:var(--font-sans); font-size:36px; font-weight:700; line-height:1.42; letter-spacing:.02em; text-wrap:balance; color:var(--slate-700);">鹿追高校支援 視察資料</h1>
-        <div style="margin-top:12px; font-size:15px; color:var(--text-muted); letter-spacing:.02em;">令和8年度予算・令和7年度事業実績　│　鹿追町教育委員会</div>
+        <div style="margin-top:12px; font-size:16px; color:var(--text-muted); letter-spacing:.02em;">令和8年度予算・令和7年度事業実績　│　鹿追町教育委員会</div>
         <p class="lead" id="hero-lead" style="max-width:640px; margin-top:22px;"></p>
 
         <div class="grid-4" style="margin-top:30px;">
           <div class="card-tinted">
-            <div style="font-family:var(--font-sans); font-size:12px; letter-spacing:.06em; color:var(--sage-700); font-weight:500;">入学者数(令和7年度)</div>
+            <div style="font-family:var(--font-sans); font-size:16px; letter-spacing:.06em; color:var(--sage-700); font-weight:500;">入学者数(令和7年度)</div>
             <div id="stat-enrollment" style="margin-top:8px; font-family:var(--font-sans); font-size:28px; font-weight:700; color:var(--slate-700);">--</div>
-            <div id="stat-enrollment-sub" style="margin-top:2px; font-size:12.5px; color:var(--text-muted);">--</div>
+            <div id="stat-enrollment-sub" style="margin-top:2px; font-size:16px; color:var(--text-muted);">--</div>
           </div>
           <div class="card-tinted">
-            <div style="font-family:var(--font-sans); font-size:12px; letter-spacing:.06em; color:var(--sage-700); font-weight:500;">高校寄宿舎</div>
+            <div style="font-family:var(--font-sans); font-size:16px; letter-spacing:.06em; color:var(--sage-700); font-weight:500;">高校寄宿舎</div>
             <div id="stat-dorm" style="margin-top:8px; font-family:var(--font-sans); font-size:28px; font-weight:700; color:var(--slate-700);">--</div>
-            <div style="margin-top:2px; font-size:12.5px; color:var(--text-muted);">Penguin Dormitory・House</div>
+            <div style="margin-top:2px; font-size:16px; color:var(--text-muted);">Penguin Dormitory・House</div>
           </div>
           <div class="card-tinted">
-            <div style="font-family:var(--font-sans); font-size:12px; letter-spacing:.06em; color:var(--sage-700); font-weight:500;">歳出総額(令和8年度予算)</div>
+            <div style="font-family:var(--font-sans); font-size:16px; letter-spacing:.06em; color:var(--sage-700); font-weight:500;">歳出総額(令和8年度予算)</div>
             <div id="stat-expenditure" style="margin-top:8px; font-family:var(--font-sans); font-size:28px; font-weight:700; color:var(--slate-700);">--</div>
-            <div style="margin-top:2px; font-size:12.5px; color:var(--text-muted);">鹿追高校振興事業+寄宿舎事業</div>
+            <div style="margin-top:2px; font-size:16px; color:var(--text-muted);">鹿追高校振興事業+寄宿舎事業</div>
           </div>
           <div class="card-tinted">
-            <div style="font-family:var(--font-sans); font-size:12px; letter-spacing:.06em; color:var(--sage-700); font-weight:500;">一般財源比率</div>
+            <div style="font-family:var(--font-sans); font-size:16px; letter-spacing:.06em; color:var(--sage-700); font-weight:500;">一般財源比率</div>
             <div id="stat-general-ratio" style="margin-top:8px; font-family:var(--font-sans); font-size:28px; font-weight:700; color:var(--slate-700);">--</div>
-            <div id="stat-kofukin-note" style="margin-top:2px; font-size:12.5px; color:var(--text-muted);">--</div>
+            <div id="stat-kofukin-note" style="margin-top:2px; font-size:16px; color:var(--text-muted);">--</div>
           </div>
         </div>
       </div>
@@ -199,11 +198,11 @@
         <div id="reasons-list" class="grid-2"></div>
 
         <div class="card avoid-break" style="margin-top:24px;">
-          <div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--text-heading); margin-bottom:8px;">参考:鹿追町教育大綱(2023-)における位置づけ</div>
-          <p id="charter-overview" style="margin:0 0 10px; font-size:13.5px; line-height:1.85; color:var(--text-body);"></p>
-          <p id="charter-basic-policy" style="margin:0 0 14px; font-size:13.5px; line-height:1.85; color:var(--text-body);"></p>
+          <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); margin-bottom:8px;">参考:鹿追町教育大綱(2023-)における位置づけ</div>
+          <p id="charter-overview" style="margin:0 0 10px; font-size:16px; line-height:1.85; color:var(--text-body);"></p>
+          <p id="charter-basic-policy" style="margin:0 0 14px; font-size:16px; line-height:1.85; color:var(--text-body);"></p>
           <table id="charter-policy-table" style="margin-bottom:14px;"><thead><tr><th>政策</th><th>高校支援に関する施策</th></tr></thead><tbody></tbody></table>
-          <p id="charter-relevance" style="margin:0; font-size:13.5px; line-height:1.85; color:var(--text-muted);"></p>
+          <p id="charter-relevance" style="margin:0; font-size:16px; line-height:1.85; color:var(--text-muted);"></p>
         </div>
       </section>
 
@@ -217,13 +216,13 @@
         <p class="lead" style="margin-bottom:16px;">昭和60年(1985年)のカナダ・ストニィプレイン町との姉妹提携以降、国際交流を軸に幼小中高一貫教育を積み上げてきました。平成7年(1995年)には入学者減少により存続の危機に直面しましたが、コース制導入・研究開発学校指定・全国募集開始・寮整備などの取り組みを経て、令和7年度に大きな成果を上げています。</p>
 
         <div class="card avoid-break" style="margin-bottom:20px;">
-          <div style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--text-heading); margin-bottom:10px;">入学者数(出身地域別)・地元入学率の推移(平成19年度〜令和8年度)</div>
+          <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); margin-bottom:10px;">入学者数(出身地域別)・地元入学率の推移(平成19年度〜令和8年度)</div>
           <div id="trend-chart" style="overflow-x:auto;"></div>
-          <div id="trend-legend" style="display:flex; gap:16px; flex-wrap:wrap; margin-top:10px; font-size:12.5px; color:var(--text-muted);"></div>
+          <div id="trend-legend" style="display:flex; gap:16px; flex-wrap:wrap; margin-top:10px; font-size:16px; color:var(--text-muted);"></div>
         </div>
 
         <div class="card" style="margin-bottom:16px; overflow-x:auto;">
-          <div style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--text-heading); margin-bottom:10px;">年表(昭和60年度〈1985〉〜令和6年度〈2024〉)</div>
+          <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); margin-bottom:10px;">年表(昭和60年度〈1985〉〜令和6年度〈2024〉)</div>
           <table class="history-table">
             <thead><tr><th>年度</th><th class="history-col-intl">国際交流</th><th class="history-col-edu">幼小中高一貫教育</th><th class="history-col-koko">鹿追高校</th></tr></thead>
             <tbody id="history-list"></tbody>
@@ -231,8 +230,8 @@
         </div>
 
         <div class="card-tinted avoid-break">
-          <div style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--sage-700); margin-bottom:6px;" id="history-highlight-year">--</div>
-          <p style="margin:0; font-size:14px; line-height:1.8;" id="history-highlight-note"></p>
+          <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--sage-700); margin-bottom:6px;" id="history-highlight-year">--</div>
+          <p style="margin:0; font-size:16px; line-height:1.8;" id="history-highlight-note"></p>
         </div>
       </section>
 
@@ -245,31 +244,31 @@
         <div class="sec-rule"></div>
         <div class="grid-2">
           <div class="card avoid-break">
-            <div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--text-heading);">PR活動・環境整備</div>
-            <ul id="pr-list" style="margin:10px 0 0; padding-left:20px; font-size:14px; line-height:1.9; color:var(--text-body);"></ul>
+            <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading);">PR活動・環境整備</div>
+            <ul id="pr-list" style="margin:10px 0 0; padding-left:20px; font-size:16px; line-height:1.9; color:var(--text-body);"></ul>
           </div>
           <div class="card avoid-break">
-            <div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--text-heading);">出身地域</div>
-            <p id="origin-text" style="margin:10px 0 0; font-size:14px; line-height:1.85; color:var(--text-body);"></p>
+            <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading);">出身地域</div>
+            <p id="origin-text" style="margin:10px 0 0; font-size:16px; line-height:1.85; color:var(--text-body);"></p>
           </div>
           <div class="card avoid-break">
-            <div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--text-heading);">選抜方法</div>
-            <p id="selection-text" style="margin:10px 0 0; font-size:14px; line-height:1.85; color:var(--text-body);"></p>
+            <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading);">選抜方法</div>
+            <p id="selection-text" style="margin:10px 0 0; font-size:16px; line-height:1.85; color:var(--text-body);"></p>
           </div>
           <div class="card avoid-break">
-            <div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--text-heading);">メリット・デメリット</div>
-            <div id="merit-demerit" style="margin-top:10px; font-size:14px; line-height:1.85;"></div>
+            <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading);">メリット・デメリット</div>
+            <div id="merit-demerit" style="margin-top:10px; font-size:16px; line-height:1.85;"></div>
           </div>
           <div class="card avoid-break">
-            <div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--text-heading);">入学してくる生徒像</div>
-            <ul id="profile-list" style="margin:10px 0 0; padding-left:20px; font-size:14px; line-height:1.9; color:var(--text-body);"></ul>
+            <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading);">入学してくる生徒像</div>
+            <ul id="profile-list" style="margin:10px 0 0; padding-left:20px; font-size:16px; line-height:1.9; color:var(--text-body);"></ul>
           </div>
           <div class="card avoid-break">
-            <div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--text-heading);">高校と自治体との連携体制</div>
-            <ul id="cooperation-list" style="margin:10px 0 0; padding-left:20px; font-size:14px; line-height:1.9; color:var(--text-body);"></ul>
+            <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading);">高校と自治体との連携体制</div>
+            <ul id="cooperation-list" style="margin:10px 0 0; padding-left:20px; font-size:16px; line-height:1.9; color:var(--text-body);"></ul>
           </div>
         </div>
-        <p id="resident-support-text" class="lead" style="margin-top:16px; font-size:14px; color:var(--text-muted);"></p>
+        <p id="resident-support-text" class="lead" style="margin-top:16px; font-size:16px; color:var(--text-muted);"></p>
       </section>
 
       <!-- 05 学生寮 -->
@@ -283,66 +282,66 @@
         <div class="grid-3 avoid-break" id="facility-cards" style="margin-bottom:18px;"></div>
 
         <div class="card avoid-break" style="margin-bottom:18px;">
-          <div style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--text-heading); margin-bottom:10px;">整備スケジュール</div>
+          <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); margin-bottom:10px;">整備スケジュール</div>
           <table id="schedule-table"><thead><tr><th>年度</th><th>施設タイプ</th><th>室数</th><th>状況</th><th>財源</th></tr></thead><tbody></tbody></table>
         </div>
 
         <div class="card avoid-break" style="margin-bottom:18px;">
-          <div style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--text-heading); margin-bottom:4px;">現在の入寮状況(令和8年度)</div>
-          <p style="margin:0 0 10px; font-size:11.5px; color:var(--text-faint);">R8鹿追高校寮入寮者一覧.csv より集計(個人情報は集計値のみ使用)</p>
+          <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); margin-bottom:4px;">現在の入寮状況(令和8年度)</div>
+          <p style="margin:0 0 10px; font-size:16px; color:var(--text-faint);">R8鹿追高校寮入寮者一覧.csv より集計(個人情報は集計値のみ使用)</p>
           <div style="margin-top:6px; display:flex; align-items:baseline; gap:10px;">
             <span id="occ-total" style="font-family:var(--font-sans); font-size:24px; font-weight:700; color:var(--slate-700);">--</span>
-            <span id="occ-rate" style="font-size:13px; color:var(--text-muted);">--</span>
+            <span id="occ-rate" style="font-size:16px; color:var(--text-muted);">--</span>
           </div>
           <div id="occ-by-facility" style="margin-top:16px; display:flex; flex-direction:column; gap:18px;"></div>
-          <div style="display:flex; gap:18px; flex-wrap:wrap; margin-top:10px; font-size:12px; color:var(--text-muted);">
+          <div style="display:flex; gap:18px; flex-wrap:wrap; margin-top:10px; font-size:16px; color:var(--text-muted);">
             <span><span style="display:inline-block; width:11px; height:11px; background:var(--slate-500); margin-right:5px; vertical-align:middle; border-radius:3px;"></span>男子</span>
             <span><span style="display:inline-block; width:11px; height:11px; background:var(--sage-500); margin-right:5px; vertical-align:middle; border-radius:3px;"></span>女子</span>
             <span><span style="display:inline-block; width:11px; height:11px; background:#eae2d4; border:1px solid #d8cfc0; margin-right:5px; vertical-align:middle; border-radius:3px;"></span>空室</span>
           </div>
           <div style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:24px;">
             <div>
-              <div style="font-size:13px; color:var(--text-muted); margin-bottom:6px;">学年別内訳</div>
+              <div style="font-size:16px; color:var(--text-muted); margin-bottom:6px;">学年別内訳</div>
               <div id="occ-by-grade"></div>
             </div>
             <div>
-              <div style="font-size:13px; color:var(--text-muted); margin-bottom:6px;">都道府県別人数</div>
+              <div style="font-size:16px; color:var(--text-muted); margin-bottom:6px;">都道府県別人数</div>
               <div id="occ-by-prefecture"></div>
             </div>
           </div>
-          <p id="occ-outlook" style="margin:14px 0 0; font-size:13px; color:var(--text-muted); line-height:1.75;"></p>
+          <p id="occ-outlook" style="margin:14px 0 0; font-size:16px; color:var(--text-muted); line-height:1.75;"></p>
         </div>
 
         <div class="grid-2 avoid-break" style="margin-bottom:18px;">
           <div class="card">
-            <div style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--text-heading);" id="construction-dorm-title"></div>
-            <p id="construction-dorm-body" style="margin:10px 0 0; font-size:13.5px; line-height:1.85; color:var(--text-body);"></p>
+            <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading);" id="construction-dorm-title"></div>
+            <p id="construction-dorm-body" style="margin:10px 0 0; font-size:16px; line-height:1.85; color:var(--text-body);"></p>
           </div>
           <div class="card">
-            <div style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--text-heading);" id="construction-house-title"></div>
-            <p id="construction-house-body" style="margin:10px 0 0; font-size:13.5px; line-height:1.85; color:var(--text-body);"></p>
+            <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading);" id="construction-house-title"></div>
+            <p id="construction-house-body" style="margin:10px 0 0; font-size:16px; line-height:1.85; color:var(--text-body);"></p>
           </div>
         </div>
 
         <div class="card avoid-break" style="margin-bottom:18px;">
-          <div style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--text-heading); margin-bottom:10px;">運営体制・委託費用</div>
-          <p id="operation-dorm-text" style="margin:0 0 10px; font-size:13.5px; line-height:1.85; color:var(--text-body);"></p>
+          <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); margin-bottom:10px;">運営体制・委託費用</div>
+          <p id="operation-dorm-text" style="margin:0 0 10px; font-size:16px; line-height:1.85; color:var(--text-body);"></p>
           <table id="cost-table"><thead><tr><th>年度</th><th>基本委託料</th><th>変動委託料(食事代)</th><th>合計</th></tr></thead><tbody></tbody></table>
-          <p id="operation-dorm-detail" style="margin:10px 0 0; font-size:13px; line-height:1.8; color:var(--text-muted);"></p>
-          <p id="operation-house-text" style="margin:10px 0 0; font-size:13.5px; line-height:1.85; color:var(--text-body);"></p>
+          <p id="operation-dorm-detail" style="margin:10px 0 0; font-size:16px; line-height:1.8; color:var(--text-muted);"></p>
+          <p id="operation-house-text" style="margin:10px 0 0; font-size:16px; line-height:1.85; color:var(--text-body);"></p>
         </div>
 
         <div class="grid-2 avoid-break" style="margin-bottom:18px;">
           <div class="card">
-            <div style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--text-heading);">料金・減免制度</div>
-            <p id="pricing-text" style="margin:10px 0 0; font-size:13.5px; line-height:1.85; color:var(--text-body);"></p>
+            <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading);">料金・減免制度</div>
+            <p id="pricing-text" style="margin:10px 0 0; font-size:16px; line-height:1.85; color:var(--text-body);"></p>
           </div>
           <div class="card">
-            <div style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--text-heading);">業務内容</div>
-            <ul id="duties-list" style="margin:10px 0 0; padding-left:18px; font-size:13.5px; line-height:1.85; color:var(--text-body);"></ul>
+            <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading);">業務内容</div>
+            <ul id="duties-list" style="margin:10px 0 0; padding-left:18px; font-size:16px; line-height:1.85; color:var(--text-body);"></ul>
           </div>
         </div>
-        <p id="operation-challenges" class="lead" style="font-size:13.5px; color:var(--text-muted);"></p>
+        <p id="operation-challenges" class="lead" style="font-size:16px; color:var(--text-muted);"></p>
       </section>
 
       <!-- 06 事業内容と財政 -->
@@ -355,26 +354,26 @@
 
         <!-- 6-0 事業内容 -->
         <div class="card avoid-break" style="margin-bottom:20px;">
-          <div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--text-heading); margin-bottom:14px;">支援事業の種類(概要)</div>
+          <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); margin-bottom:14px;">支援事業の種類(概要)</div>
           <div id="program-types" class="grid-3"></div>
         </div>
 
         <!-- 6-1 サマリー -->
         <div class="card-tinted avoid-break" style="padding:34px 36px 30px; margin-bottom:20px;">
-          <div style="font-family:var(--font-sans); font-size:13px; letter-spacing:.1em; color:var(--sage-700); text-transform:uppercase; font-weight:500;">歳出総額(令和8年度予算)</div>
+          <div style="font-family:var(--font-sans); font-size:16px; letter-spacing:.1em; color:var(--sage-700); text-transform:uppercase; font-weight:500;">歳出総額(令和8年度予算)</div>
           <div style="margin-top:8px; display:flex; align-items:baseline; gap:12px;">
             <span id="exp-total-display" style="font-family:var(--font-sans); font-size:44px; font-weight:700; line-height:1; color:var(--slate-700);">--</span>
-            <span id="exp-total-yen" style="font-size:14px; color:var(--text-muted); font-family:var(--font-sans);">--</span>
+            <span id="exp-total-yen" style="font-size:16px; color:var(--text-muted); font-family:var(--font-sans);">--</span>
           </div>
           <div style="margin-top:26px;">
             <div style="display:flex; height:58px; border-radius:11px; overflow:hidden; background:#eae2d4;">
               <div id="seg-kofukin" class="seg-anim" style="width:0%; background:linear-gradient(180deg,var(--sage-500),var(--sage-600)); display:flex; flex-direction:column; justify-content:center; padding-left:18px; gap:2px;">
-                <span style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:#fff;">交付金等</span>
-                <span id="seg-kofukin-amount" style="font-size:12.5px; color:rgba(255,255,255,.9);">--</span>
+                <span style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:#fff;">交付金等</span>
+                <span id="seg-kofukin-amount" style="font-size:16px; color:rgba(255,255,255,.9);">--</span>
               </div>
               <div id="seg-general" class="seg-anim" style="width:0%; background:var(--slate-600); display:flex; flex-direction:column; justify-content:center; padding-left:16px; gap:2px; animation-delay:.12s;">
-                <span style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:#fff;">一般財源</span>
-                <span id="seg-general-amount" style="font-size:12.5px; color:rgba(255,255,255,.85);">--</span>
+                <span style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:#fff;">一般財源</span>
+                <span id="seg-general-amount" style="font-size:16px; color:rgba(255,255,255,.85);">--</span>
               </div>
             </div>
             <div style="display:flex; margin-top:10px;">
@@ -386,7 +385,7 @@
 
         <!-- 6-2 事業別内訳 -->
         <div class="card avoid-break" style="margin-bottom:20px;">
-          <div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--text-heading); margin-bottom:14px;">事業別内訳</div>
+          <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); margin-bottom:14px;">事業別内訳</div>
           <div style="display:flex; gap:28px; flex-wrap:wrap; align-items:center;">
             <div id="business-donut"></div>
             <div id="business-legend" style="flex:1; min-width:220px;"></div>
@@ -395,7 +394,7 @@
 
         <!-- 6-3 歳入内訳 -->
         <div class="card avoid-break">
-          <div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--text-heading); margin-bottom:10px;">歳入内訳(款・目・節・細節)</div>
+          <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); margin-bottom:10px;">歳入内訳(款・目・節・細節)</div>
           <table id="revenue-table"><thead><tr><th>款</th><th>目</th><th>節</th><th>細節</th><th style="text-align:right;">予算確定額</th></tr></thead><tbody></tbody></table>
         </div>
       </section>
@@ -417,7 +416,7 @@
           <div style="flex:1;"><div class="sec-eyebrow">08 · FY Reiwa 7 Results</div><h2 class="sec-title">令和7年度 事業実績</h2></div>
         </div>
         <div class="sec-rule"></div>
-        <p style="margin:0 0 18px; font-size:14px; line-height:1.8; color:var(--text-muted);">令和7年度に実施した高校支援事業は、以下の通りです。</p>
+        <p style="margin:0 0 18px; font-size:16px; line-height:1.8; color:var(--text-muted);">令和7年度に実施した高校支援事業は、以下の通りです。</p>
         <div id="program-list" style="border:1px solid #e8ded0; border-radius:13px; overflow:hidden;"></div>
       </section>
 
@@ -433,11 +432,11 @@
 
       <!-- footer -->
       <div style="margin-top:52px; padding-top:24px; border-top:1px solid var(--rule-divider); display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;">
-        <div style="font-size:14px; line-height:1.85; color:var(--text-muted);">
+        <div style="font-size:16px; line-height:1.85; color:var(--text-muted);">
           <div style="font-family:var(--font-sans); font-weight:700; color:var(--text-heading);">お問い合わせ</div>
           鹿追町教育委員会 学校教育課<br>〒081-0292 北海道河東郡鹿追町東町1丁目<br>TEL 0156-66-2646
         </div>
-        <div style="text-align:right; font-family:var(--font-sans); font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-faint);">Shikaoi&nbsp;Board&nbsp;of&nbsp;Education</div>
+        <div style="text-align:right; font-family:var(--font-sans); font-size:16px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-faint);">Shikaoi&nbsp;Board&nbsp;of&nbsp;Education</div>
       </div>
 
     </div>
@@ -1502,8 +1501,8 @@ window.SHIKAOI_CONTENT = {
     const div = document.createElement("div");
     div.className = "card avoid-break";
     div.innerHTML =
-      '<div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--sage-700); margin-bottom:8px;">' + esc(r.title) + "</div>" +
-      '<p style="margin:0; font-size:13.5px; line-height:1.85; color:var(--text-body);">' + esc(r.body) + "</p>";
+      '<div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--sage-700); margin-bottom:8px;">' + esc(r.title) + "</div>" +
+      '<p style="margin:0; font-size:16px; line-height:1.85; color:var(--text-body);">' + esc(r.body) + "</p>";
     reasonsList.appendChild(div);
   });
 
@@ -1522,7 +1521,7 @@ window.SHIKAOI_CONTENT = {
   // ---------- 03 history / trend chart (出身地域別・積み上げ棒 + 地元入学率・折れ線の複合グラフ) ----------
   const trendData = S.enrollment_trend.filter((e) => e["西暦"] != null && e["西暦"] >= 2007);
   function buildTrendChart(data) {
-    const W = 900, H = 300, ml = 34, mr = 34, mt = 20, mb = 46;
+    const W = 1400, H = 320, ml = 58, mr = 52, mt = 40, mb = 56;
     const plotW = W - ml - mr, plotH = H - mt - mb;
     const n = data.length;
     const bw = (plotW / n) * 0.6;
@@ -1546,8 +1545,8 @@ window.SHIKAOI_CONTENT = {
     let axisLabels = "";
     for (let g = 0; g <= 4; g++) {
       const gy = mt + (plotH * g) / 4;
-      axisLabels += '<text x="' + (ml - 6) + '" y="' + (gy + 3).toFixed(1) + '" font-size="9.5" fill="#8b989d" text-anchor="end" font-family="Noto Sans JP, sans-serif">' + Math.round(maxTotal * (1 - g / 4)) + "名</text>";
-      axisLabels += '<text x="' + (W - mr + 6) + '" y="' + (gy + 3).toFixed(1) + '" font-size="9.5" fill="var(--danger-500)" text-anchor="start" font-family="Noto Sans JP, sans-serif">' + Math.round(100 * (1 - g / 4)) + "%</text>";
+      axisLabels += '<text x="' + (ml - 6) + '" y="' + (gy + 3).toFixed(1) + '" font-size="16" fill="#8b989d" text-anchor="end" font-family="Noto Sans JP, sans-serif">' + Math.round(maxTotal * (1 - g / 4)) + "名</text>";
+      axisLabels += '<text x="' + (W - mr + 6) + '" y="' + (gy + 3).toFixed(1) + '" font-size="16" fill="var(--danger-500)" text-anchor="start" font-family="Noto Sans JP, sans-serif">' + Math.round(100 * (1 - g / 4)) + "%</text>";
     }
 
     let bars = "";
@@ -1567,12 +1566,12 @@ window.SHIKAOI_CONTENT = {
     let totalLabels = "";
     data.forEach((d, i) => {
       if (totals[i] <= 0) return;
-      totalLabels += '<text x="' + xCenter(i).toFixed(1) + '" y="' + (yCount(totals[i]) - 6).toFixed(1) + '" font-size="9.5" font-weight="700" fill="var(--slate-700)" text-anchor="middle" font-family="Noto Sans JP, sans-serif">' + totals[i] + "</text>";
+      totalLabels += '<text x="' + xCenter(i).toFixed(1) + '" y="' + (yCount(totals[i]) - 6).toFixed(1) + '" font-size="16" font-weight="700" fill="var(--slate-700)" text-anchor="middle" font-family="Noto Sans JP, sans-serif">' + totals[i] + "</text>";
     });
 
     let ticks = "";
     data.forEach((d, i) => {
-      ticks += '<text x="' + xCenter(i).toFixed(1) + '" y="' + (H - mb + 16) + '" font-size="9.5" fill="#8b989d" text-anchor="middle" font-family="Noto Sans JP, sans-serif">' + esc(d["西暦"]) + "</text>";
+      ticks += '<text x="' + xCenter(i).toFixed(1) + '" y="' + (H - mb + 16) + '" font-size="16" fill="#8b989d" text-anchor="middle" font-family="Noto Sans JP, sans-serif">' + esc(d["西暦"]) + "</text>";
     });
 
     let linePath = "";
@@ -1591,11 +1590,11 @@ window.SHIKAOI_CONTENT = {
       const px = xCenter(r4idx) - bw / 2 - 6;
       r4mark =
         '<line x1="' + px.toFixed(1) + '" y1="' + mt + '" x2="' + px.toFixed(1) + '" y2="' + (mt + plotH) + '" stroke="var(--danger-500)" stroke-width="1" stroke-dasharray="4 3" opacity="0.5" />' +
-        '<text x="' + px.toFixed(1) + '" y="' + (mt - 6) + '" font-size="9.5" fill="var(--danger-500)" text-anchor="middle" font-family="Noto Sans JP, sans-serif">←全国募集開始</text>';
+        '<text x="' + px.toFixed(1) + '" y="' + (mt - 6) + '" font-size="16" fill="var(--danger-500)" text-anchor="middle" font-family="Noto Sans JP, sans-serif">←全国募集開始</text>';
     }
 
     return (
-      '<svg viewBox="0 0 ' + W + " " + H + '" width="100%" style="min-width:680px; display:block;">' +
+      '<svg viewBox="0 0 ' + W + " " + H + '" width="' + W + '" height="' + H + '" style="display:block;">' +
       grid + axisLabels + bars + totalLabels +
       '<path d="' + linePath.trim() + '" fill="none" stroke="var(--danger-500)" stroke-width="1.8" />' +
       lineDots + r4mark + ticks +
@@ -1644,9 +1643,9 @@ window.SHIKAOI_CONTENT = {
     const div = document.createElement("div");
     div.className = "card-tinted";
     div.innerHTML =
-      '<div style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--text-heading);">' + esc(f.name) + "</div>" +
+      '<div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading);">' + esc(f.name) + "</div>" +
       '<div style="margin-top:6px; font-family:var(--font-sans); font-size:26px; font-weight:700; color:var(--sage-700);">' + esc(f.rooms) + "</div>" +
-      '<div style="margin-top:4px; font-size:12.5px; color:var(--text-muted);">' + esc(f.note) + "</div>";
+      '<div style="margin-top:4px; font-size:16px; color:var(--text-muted);">' + esc(f.note) + "</div>";
     facilityCards.appendChild(div);
   });
 
@@ -1683,14 +1682,14 @@ window.SHIKAOI_CONTENT = {
     let groups = "";
     if (f.capacity_male != null) {
       groups +=
-        '<div><div style="font-size:11.5px; color:var(--text-muted); margin-bottom:4px;">男子 ' + f.male + " / " + f.capacity_male + "名</div>" +
+        '<div><div style="font-size:16px; color:var(--text-muted); margin-bottom:4px;">男子 ' + f.male + " / " + f.capacity_male + "名</div>" +
         roomGrid(f.capacity_male, [{ count: f.male, color: "var(--slate-500)" }]) + "</div>";
       groups +=
-        '<div><div style="font-size:11.5px; color:var(--text-muted); margin-bottom:4px;">女子 ' + f.female + " / " + f.capacity_female + "名</div>" +
+        '<div><div style="font-size:16px; color:var(--text-muted); margin-bottom:4px;">女子 ' + f.female + " / " + f.capacity_female + "名</div>" +
         roomGrid(f.capacity_female, [{ count: f.female, color: "var(--sage-500)" }]) + "</div>";
     } else {
       groups +=
-        '<div><div style="font-size:11.5px; color:var(--text-muted); margin-bottom:4px;">計' + f.count + " / " + f.capacity_total + "名(男" + f.male + "・女" + f.female + ")</div>" +
+        '<div><div style="font-size:16px; color:var(--text-muted); margin-bottom:4px;">計' + f.count + " / " + f.capacity_total + "名(男" + f.male + "・女" + f.female + ")</div>" +
         roomGrid(f.capacity_total, [
           { count: f.male, color: "var(--slate-500)" },
           { count: f.female, color: "var(--sage-500)" },
@@ -1794,8 +1793,8 @@ window.SHIKAOI_CONTENT = {
       return (
         '<div style="display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid var(--rule-divider);">' +
         '<span style="width:12px; height:12px; border-radius:3px; background:' + businessColors[i % businessColors.length] + '; flex:none;"></span>' +
-        '<span style="flex:1; font-size:14px; font-family:var(--font-sans); font-weight:700; color:var(--text-heading);">' + esc(b["事業名称"]) + "</span>" +
-        '<span style="font-family:var(--font-sans); font-size:14px; font-weight:700; color:var(--text-heading);">' + yen(b["予算確定額円"]) + " (" + pct + "%)</span>" +
+        '<span style="flex:1; font-size:16px; font-family:var(--font-sans); font-weight:700; color:var(--text-heading);">' + esc(b["事業名称"]) + "</span>" +
+        '<span style="font-family:var(--font-sans); font-size:16px; font-weight:700; color:var(--text-heading);">' + yen(b["予算確定額円"]) + " (" + pct + "%)</span>" +
         "</div>"
       );
     })
@@ -1805,7 +1804,7 @@ window.SHIKAOI_CONTENT = {
   C.programTypes.forEach((p) => {
     const div = document.createElement("div");
     div.className = "card-tinted avoid-break";
-    div.style.cssText = "padding:14px 16px; font-size:13.5px; font-weight:700; color:var(--text-heading); text-align:center; display:flex; align-items:center; justify-content:center;";
+    div.style.cssText = "padding:14px 16px; font-size:16px; font-weight:700; color:var(--text-heading); text-align:center; display:flex; align-items:center; justify-content:center;";
     div.textContent = p;
     programTypes.appendChild(div);
   });
@@ -1831,8 +1830,8 @@ window.SHIKAOI_CONTENT = {
     const div = document.createElement("div");
     div.className = "card avoid-break";
     div.innerHTML =
-      '<div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--sage-700); margin-bottom:8px;">' + esc(s.title) + "</div>" +
-      '<ul style="margin:0; padding-left:18px; font-size:13.5px; line-height:1.85; color:var(--text-body);">' + s.items.map((i) => "<li>" + esc(i) + "</li>").join("") + "</ul>";
+      '<div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--sage-700); margin-bottom:8px;">' + esc(s.title) + "</div>" +
+      '<ul style="margin:0; padding-left:18px; font-size:16px; line-height:1.85; color:var(--text-body);">' + s.items.map((i) => "<li>" + esc(i) + "</li>").join("") + "</ul>";
     supportList.appendChild(div);
   });
 
@@ -1844,7 +1843,7 @@ window.SHIKAOI_CONTENT = {
     row.innerHTML =
       '<div style="width:34px; height:34px; flex:none; border-radius:50%; background:var(--sage-100); border:1.5px solid var(--sage-400);"></div>' +
       '<div style="flex:1;"><div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading);">' + esc(p.name) + "</div>" +
-      '<div style="font-size:14px; color:var(--text-muted); margin-top:2px;">' + esc(p.detail) + "</div></div>";
+      '<div style="font-size:16px; color:var(--text-muted); margin-top:2px;">' + esc(p.detail) + "</div></div>";
     programList.appendChild(row);
   });
 
