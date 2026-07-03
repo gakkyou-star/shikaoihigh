@@ -52,8 +52,8 @@
     .no-print{ display:none !important; }
     .doc{ box-shadow:none !important; margin:0 !important; width:100% !important; max-width:100% !important; }
     .seg-anim{ animation:none !important; }
-    section{ break-inside:avoid; }
     .avoid-break{ break-inside:avoid; page-break-inside:avoid; }
+    .sec-head, .sec-rule{ break-after:avoid; }
     @page{ size:A4 portrait; margin:14mm 12mm; }
   }
   @media (max-width:720px){
@@ -88,6 +88,7 @@
   .history-table th{ font-family:var(--font-sans); font-size:16px; font-weight:700; color:var(--sage-700); text-align:left; padding:8px 10px; border-bottom:2px solid var(--sage-400); white-space:nowrap; }
   .history-table td{ vertical-align:top; padding:9px 10px; border-bottom:1px solid var(--rule-divider); line-height:1.7; color:var(--text-body); break-inside:avoid; page-break-inside:avoid; }
   .history-table tr:last-child td{ border-bottom:none; }
+  #charter-policy-table td, #revenue-table td{ break-inside:avoid; page-break-inside:avoid; }
   .history-year{ font-family:var(--font-sans); font-weight:700; color:var(--sage-700); white-space:nowrap; width:76px; }
   .history-empty{ color:var(--text-faint); }
   .history-col-intl{ width:30%; }
@@ -197,7 +198,7 @@
         <p class="lead" style="margin-bottom:18px;">設置者は北海道であっても、鹿追町が財政支出を伴って鹿追高校を支援する背景には、次の5つの理由があります。</p>
         <div id="reasons-list" class="grid-2"></div>
 
-        <div class="card avoid-break" style="margin-top:24px;">
+        <div class="card" style="margin-top:24px;">
           <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); margin-bottom:8px;">参考:鹿追町教育大綱(2023-)における位置づけ</div>
           <p id="charter-overview" style="margin:0 0 10px; font-size:16px; line-height:1.85; color:var(--text-body);"></p>
           <p id="charter-basic-policy" style="margin:0 0 14px; font-size:16px; line-height:1.85; color:var(--text-body);"></p>
@@ -286,7 +287,7 @@
           <table id="schedule-table"><thead><tr><th>年度</th><th>施設タイプ</th><th>室数</th><th>状況</th><th>財源</th></tr></thead><tbody></tbody></table>
         </div>
 
-        <div class="card avoid-break" style="margin-bottom:18px;">
+        <div class="card" style="margin-bottom:18px;">
           <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); margin-bottom:4px;">現在の入寮状況(令和8年度)</div>
           <p style="margin:0 0 10px; font-size:16px; color:var(--text-faint);">R8鹿追高校寮入寮者一覧.csv より集計(個人情報は集計値のみ使用)</p>
           <div style="margin-top:6px; display:flex; align-items:baseline; gap:10px;">
@@ -393,7 +394,7 @@
         </div>
 
         <!-- 6-3 歳入内訳 -->
-        <div class="card avoid-break">
+        <div class="card">
           <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); margin-bottom:10px;">歳入内訳(款・目・節・細節)</div>
           <table id="revenue-table"><thead><tr><th>款</th><th>目</th><th>節</th><th>細節</th><th style="text-align:right;">予算確定額</th></tr></thead><tbody></tbody></table>
         </div>
@@ -1513,7 +1514,7 @@ window.SHIKAOI_CONTENT = {
   EC.relatedPolicies.forEach((p) => {
     const tr = document.createElement("tr");
     tr.style.borderTop = "1px solid var(--rule-divider)";
-    tr.innerHTML = "<td style=\"font-weight:700; white-space:nowrap;\">" + esc(p.policy) + "</td><td>" + esc(p.detail) + "</td>";
+    tr.innerHTML = "<td style=\"font-weight:700; width:30%;\">" + esc(p.policy) + "</td><td>" + esc(p.detail) + "</td>";
     charterBody.appendChild(tr);
   });
   document.getElementById("charter-relevance").textContent = EC.relevance;
