@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鹿追高校支援 視察資料 | 鹿追町教育委員会</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@0.544.0/dist/umd/lucide.min.js"></script>
+<style>
+  :root{
+    --slate-900:#263237; --slate-800:#303f45; --slate-700:#3a4a4f; --slate-600:#4c5e64;
+    --slate-500:#647479; --slate-400:#8b989d; --slate-300:#b4bdc0;
+    --sage-700:#4f7d72; --sage-600:#5e9286; --sage-500:#6fa79b; --sage-400:#8db9af;
+    --sage-300:#aecdc6; --sage-200:#cfe0db; --sage-100:#e7efec;
+    --greige-400:#c8c4bc; --greige-300:#dad7d2; --greige-200:#e8e6e1; --greige-100:#f1efec;
+    --rule-heading: rgba(58,74,79,.30); --rule-divider:#d4d7d5;
+    --success-100:#e7efec; --danger-100:#f3e4e2; --danger-500:#b06a63; --amber-500:#c48a3c;
+    --text-heading: var(--slate-700); --text-body: var(--slate-800); --text-muted: var(--slate-500); --text-faint: var(--slate-400);
+    --font-sans: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+    --font-body: 'BIZ UDPGothic', 'Hiragino Sans', sans-serif;
+    --border-input: var(--greige-400);
+  }
+  *{ box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  html{ scroll-behavior:smooth; }
+  body{ margin:0; background:#f7f2ea; font-family:var(--font-body); color:var(--text-body); -webkit-font-smoothing:antialiased; }
+  a{ color:inherit; }
+  table{ border-collapse:collapse; width:100%; }
+  th,td{ text-align:left; padding:10px 12px; font-size:14px; }
+
+  @keyframes grow{ from{ transform:scaleX(0); } to{ transform:scaleX(1); } }
+  .seg-anim{ transform-origin:left center; animation:grow .9s cubic-bezier(.4,0,.2,1) both; }
+  @media (prefers-reduced-motion:reduce){ .seg-anim{ animation:none; } html{ scroll-behavior:auto; } }
+
+  .card{ background:#fff; border:1px solid #e8ded0; border-radius:13px; padding:20px 22px; }
+  .card-tinted{ background:#f6f1e8; border:1px solid #e8ded0; border-radius:14px; padding:22px; }
+  .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .grid-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .grid-4{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  .avoid-break{ break-inside:avoid; page-break-inside:avoid; }
+  .sec-head{ display:flex; align-items:flex-start; gap:14px; }
+  .sec-bar{ width:4px; align-self:stretch; min-height:2.4em; background:var(--sage-500); border-radius:999px; margin-top:4px; flex:none; }
+  .sec-eyebrow{ font-family:var(--font-sans); font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage-700); font-weight:500; }
+  .sec-title{ margin:4px 0 0; font-family:var(--font-sans); font-size:26px; font-weight:700; color:var(--text-heading); letter-spacing:.02em; }
+  .sec-rule{ border-bottom:1px solid var(--rule-heading); margin:18px 0 24px; }
+  .lead{ margin:0; font-size:16px; line-height:1.9; color:var(--text-body); }
+  .pill{ display:inline-flex; align-items:center; gap:6px; font-family:var(--font-sans); font-size:13px; font-weight:700; padding:4px 12px; border-radius:999px; }
+
+  @media print{
+    body{ background:#fff; }
+    .no-print{ display:none !important; }
+    .doc{ box-shadow:none !important; margin:0 !important; width:100% !important; max-width:100% !important; }
+    .seg-anim{ animation:none !important; }
+    section{ break-inside:avoid; }
+    .avoid-break{ break-inside:avoid; page-break-inside:avoid; }
+    @page{ size:A4 portrait; margin:14mm 12mm; }
+  }
+  @media (max-width:720px){
+    .doc{ padding:0 !important; }
+    .hero-pad{ padding:32px 22px !important; }
+    .body-pad{ padding:26px 20px !important; }
+    .grid-2,.grid-3,.grid-4{ grid-template-columns:1fr !important; }
+    h1{ font-size:28px !important; }
+    .room-block-row{ flex-direction:column; gap:6px !important; }
+    .room-block-label{ width:auto !important; }
+    .room-cell{ width:19px; height:19px; font-size:8px; }
+  }
+  @media (max-width:960px) and (min-width:721px){
+    .grid-3,.grid-4{ grid-template-columns:repeat(2,1fr) !important; }
+  }
+  @media (max-width:1180px){
+    .nav-links{ display:none !important; }
+  }
+
+  .nav-link{ display:flex; align-items:center; gap:6px; padding:6px 10px; border-radius:6px; text-decoration:none; font-size:13px; font-family:var(--font-sans); color:var(--text-muted); transition:background .16s, color .16s; background:transparent; white-space:nowrap; }
+  .nav-link:hover{ background:var(--greige-100); color:var(--text-heading); }
+  .nav-link.active{ background:var(--greige-100); color:var(--text-heading); }
+
+  .doc-link{ display:flex; align-items:center; gap:15px; padding:18px 20px; border:1px solid #e8ded0; border-radius:13px; text-decoration:none; transition:border-color .16s, background .16s; }
+  .doc-link:hover{ border-color:var(--sage-400); background:var(--sage-100); }
+
+  .faq-item{ border-bottom:1px solid var(--rule-divider); padding:16px 2px; }
+  .faq-item:last-child{ border-bottom:none; }
+  .faq-q{ font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--text-heading); display:flex; gap:10px; }
+  .faq-a{ margin:8px 0 0 26px; font-size:14px; line-height:1.8; color:var(--text-muted); }
+
+  .history-table{ width:100%; border-collapse:collapse; font-size:12.5px; }
+  .history-table th{ font-family:var(--font-sans); font-size:11.5px; font-weight:700; color:var(--sage-700); text-align:left; padding:8px 10px; border-bottom:2px solid var(--sage-400); white-space:nowrap; }
+  .history-table td{ vertical-align:top; padding:9px 10px; border-bottom:1px solid var(--rule-divider); line-height:1.7; color:var(--text-body); break-inside:avoid; page-break-inside:avoid; }
+  .history-table tr:last-child td{ border-bottom:none; }
+  .history-year{ font-family:var(--font-sans); font-weight:700; color:var(--sage-700); white-space:nowrap; width:76px; }
+  .history-empty{ color:var(--text-faint); }
+  .history-col-intl{ width:30%; }
+  .history-col-edu{ width:33%; }
+  .history-col-koko{ width:33%; }
+
+  .bar-row{ display:flex; align-items:center; gap:10px; margin:10px 0; }
+  .bar-label{ width:150px; flex:none; font-size:13px; color:var(--text-body); line-height:1.5; }
+  .bar-track{ flex:1; background:#eae2d4; border-radius:6px; height:22px; overflow:hidden; position:relative; }
+  .bar-fill{ height:100%; border-radius:6px; }
+  .bar-value{ width:110px; flex:none; text-align:right; font-family:var(--font-sans); font-size:13px; font-weight:700; color:var(--text-heading); }
+
+  .room-block-row{ display:flex; align-items:flex-start; gap:14px; }
+  .room-block-label{ width:70px; flex:none; font-family:var(--font-sans); font-weight:700; font-size:13px; color:var(--text-heading); padding-top:3px; }
+  .room-block-groups{ display:flex; gap:16px; flex-wrap:wrap; flex:1; }
+  .room-grid{ display:flex; flex-wrap:wrap; gap:3px; max-width:100%; }
+  .room-cell{ width:22px; height:22px; flex:none; border-radius:4px; display:flex; align-items:center; justify-content:center; font-size:9px; font-family:var(--font-sans); font-weight:700; border:1px solid rgba(0,0,0,.06); }
+</style>
+</head>
+<body>
+
+<div style="min-height:100vh;">
+
+  <!-- sticky utility nav -->
+  <div class="no-print" style="position:sticky; top:0; z-index:20; background:rgba(243,238,231,.92); backdrop-filter:blur(8px); border-bottom:1px solid #ddd6ca;">
+    <div style="max-width:1100px; margin:0 auto; padding:10px 24px; display:flex; align-items:center; gap:14px;">
+      <div style="display:flex; flex-direction:column; line-height:1.2; flex:none;">
+        <span style="font-family:var(--font-sans); font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted); font-weight:500;">Shikaoi Board of Education</span>
+        <span style="font-family:var(--font-sans); font-size:13px; font-weight:700; color:var(--text-heading);">鹿追町教育委員会</span>
+      </div>
+      <nav class="nav-links" style="margin-left:auto; display:flex; gap:2px; overflow-x:auto;">
+        <a class="nav-link" data-nav="sec-01" href="#sec-01">01 概要</a>
+        <a class="nav-link" data-nav="sec-02" href="#sec-02">02 支援理由</a>
+        <a class="nav-link" data-nav="sec-03" href="#sec-03">03 沿革</a>
+        <a class="nav-link" data-nav="sec-04" href="#sec-04">04 全国公募</a>
+        <a class="nav-link" data-nav="sec-05" href="#sec-05">05 学生寮</a>
+        <a class="nav-link" data-nav="sec-06" href="#sec-06">06 事業・財政</a>
+        <a class="nav-link" data-nav="sec-07" href="#sec-07">07 生徒支援</a>
+        <a class="nav-link" data-nav="sec-08" href="#sec-08">08 事業実績</a>
+        <a class="nav-link" data-nav="sec-09" href="#sec-09">09 FAQ</a>
+      </nav>
+      <button id="print-btn" style="flex:none; display:flex; align-items:center; gap:7px; padding:7px 14px; border:none; border-radius:6px; background:var(--slate-700); color:#fff; font-family:var(--font-sans); font-size:14px; font-weight:500; cursor:pointer;">
+        <i data-lucide="printer" style="width:16px; height:16px;"></i><span>印刷</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- document -->
+  <div class="doc" style="max-width:1100px; margin:22px auto 60px; background:#fffdfa; border:1px solid #e9e2d6; border-radius:16px; box-shadow:0 16px 44px rgba(86,66,46,.13); padding:0; overflow:hidden;">
+
+    <!-- HERO -->
+    <header style="position:relative; overflow:hidden; background:#f4efe4; border-left:5px solid var(--sage-500); border-bottom:1px solid #e8ded0;">
+      <div class="hero-pad" style="position:relative; padding:52px 60px 44px;">
+        <div style="display:flex; align-items:center; gap:12px; font-family:var(--font-sans); font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage-700); font-weight:500;">
+          <span style="width:26px; height:1.5px; background:var(--sage-500);"></span>
+          <span>Inspection Briefing · 視察資料</span>
+        </div>
+        <h1 style="margin:20px 0 0; font-family:var(--font-sans); font-size:36px; font-weight:700; line-height:1.42; letter-spacing:.02em; text-wrap:balance; color:var(--slate-700);">鹿追高校支援 視察資料</h1>
+        <div style="margin-top:12px; font-size:15px; color:var(--text-muted); letter-spacing:.02em;">令和8年度予算・令和7年度事業実績　│　鹿追町教育委員会</div>
+        <p class="lead" id="hero-lead" style="max-width:640px; margin-top:22px;"></p>
+
+        <div class="grid-4" style="margin-top:30px;">
+          <div class="card-tinted">
+            <div style="font-family:var(--font-sans); font-size:12px; letter-spacing:.06em; color:var(--sage-700); font-weight:500;">入学者数(令和7年度)</div>
+            <div id="stat-enrollment" style="margin-top:8px; font-family:var(--font-sans); font-size:28px; font-weight:700; color:var(--slate-700);">--</div>
+            <div id="stat-enrollment-sub" style="margin-top:2px; font-size:12.5px; color:var(--text-muted);">--</div>
+          </div>
+          <div class="card-tinted">
+            <div style="font-family:var(--font-sans); font-size:12px; letter-spacing:.06em; color:var(--sage-700); font-weight:500;">高校寄宿舎</div>
+            <div id="stat-dorm" style="margin-top:8px; font-family:var(--font-sans); font-size:28px; font-weight:700; color:var(--slate-700);">--</div>
+            <div style="margin-top:2px; font-size:12.5px; color:var(--text-muted);">Penguin Dormitory・House</div>
+          </div>
+          <div class="card-tinted">
+            <div style="font-family:var(--font-sans); font-size:12px; letter-spacing:.06em; color:var(--sage-700); font-weight:500;">歳出総額(令和8年度予算)</div>
+            <div id="stat-expenditure" style="margin-top:8px; font-family:var(--font-sans); font-size:28px; font-weight:700; color:var(--slate-700);">--</div>
+            <div style="margin-top:2px; font-size:12.5px; color:var(--text-muted);">鹿追高校振興事業+寄宿舎事業</div>
+          </div>
+          <div class="card-tinted">
+            <div style="font-family:var(--font-sans); font-size:12px; letter-spacing:.06em; color:var(--sage-700); font-weight:500;">一般財源比率</div>
+            <div id="stat-general-ratio" style="margin-top:8px; font-family:var(--font-sans); font-size:28px; font-weight:700; color:var(--slate-700);">--</div>
+            <div id="stat-kofukin-note" style="margin-top:2px; font-size:12.5px; color:var(--text-muted);">--</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div style="padding:48px 60px 40px;" class="body-pad">
+
+      <!-- 01 概要 -->
+      <section id="sec-01" style="scroll-margin-top:64px;">
+        <div class="sec-head">
+          <span class="sec-bar"></span>
+          <div><div class="sec-eyebrow">01 · Overview</div><h2 class="sec-title">概要</h2></div>
+        </div>
+        <div class="sec-rule"></div>
+        <p class="lead">鹿追町教育委員会では、地域唯一の高等学校である北海道鹿追高等学校の存続と魅力化を支えるため、通学・寄宿舎・国際交流・資格取得・探究学習など幅広い分野で高校生の学びを支援しています。人口減少が進むなかでも、生徒が安心して学び、ふるさとに誇りを持てる環境を整えることを目的としています。</p>
+        <p class="lead" style="margin-top:14px;">本資料は、視察にお越しの皆さまに、支援の背景・歴史的経緯・全国公募や学生寮の実際・財政構造・令和7年度の事業実績を、短時間で正確にご確認いただくためにまとめたものです。</p>
+      </section>
+
+      <!-- 02 なぜ鹿追町は鹿追高校を支援するのか -->
+      <section id="sec-02" style="scroll-margin-top:64px; margin-top:52px;">
+        <div class="sec-head">
+          <span class="sec-bar"></span>
+          <div><div class="sec-eyebrow">02 · Why We Support</div><h2 class="sec-title">なぜ鹿追町は鹿追高校を支援するのか</h2></div>
+        </div>
+        <div class="sec-rule"></div>
+        <p class="lead" style="margin-bottom:18px;">設置者は北海道であっても、鹿追町が財政支出を伴って鹿追高校を支援する背景には、次の5つの理由があります。</p>
+        <div id="reasons-list" class="grid-2"></div>
+
+        <div class="card avoid-break" style="margin-top:24px;">
+          <div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--text-heading); margin-bottom:8px;">参考:鹿追町教育大綱(2023-)における位置づけ</div>
+          <p id="charter-overview" style="margin:0 0 10px; font-size:13.5px; line-height:1.85; color:var(--text-body);"></p>
+          <p id="charter-basic-policy" style="margin:0 0 14px; font-size:13.5px; line-height:1.85; color:var(--text-body);"></p>
+          <table id="charter-policy-table" style="margin-bottom:14px;"><thead><tr><th>政策</th><th>高校支援に関する施策</th></tr></thead><tbody></tbody></table>
+          <p id="charter-relevance" style="margin:0; font-size:13.5px; line-height:1.85; color:var(--text-muted);"></p>
+        </div>
+      </section>
+
+      <!-- 03 歴史的経緯 -->
+      <section id="sec-03" style="scroll-margin-top:64px; margin-top:52px;">
+        <div class="sec-head">
+          <span class="sec-bar"></span>
+          <div><div class="sec-eyebrow">03 · History</div><h2 class="sec-title">歴史的経緯(幼小中高一貫教育のあゆみ)</h2></div>
+        </div>
+        <div class="sec-rule"></div>
+        <p class="lead" style="margin-bottom:16px;">昭和60年(1985年)のカナダ・ストニィプレイン町との姉妹提携以降、国際交流を軸に幼小中高一貫教育を積み上げてきました。平成7年(1995年)には入学者減少により存続の危機に直面しましたが、コース制導入・研究開発学校指定・全国募集開始・寮整備などの取り組みを経て、令和7年度に大きな成果を上げています。</p>
+
+        <div class="card avoid-break" style="margin-bottom:20px;">
+          <div style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--text-heading); margin-bottom:10px;">入学者数(出身地域別)・地元入学率の推移(平成19年度〜令和8年度)</div>
+          <div id="trend-chart" style="overflow-x:auto;"></div>
+          <div id="trend-legend" style="display:flex; gap:16px; flex-wrap:wrap; margin-top:10px; font-size:12.5px; color:var(--text-muted);"></div>
+        </div>
+
+        <div class="card" style="margin-bottom:16px; overflow-x:auto;">
+          <div style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--text-heading); margin-bottom:10px;">年表(昭和60年度〈1985〉〜令和6年度〈2024〉)</div>
+          <table class="history-table">
+            <thead><tr><th>年度</th><th class="history-col-intl">国際交流</th><th class="history-col-edu">幼小中高一貫教育</th><th class="history-col-koko">鹿追高校</th></tr></thead>
+            <tbody id="history-list"></tbody>
+          </table>
+        </div>
+
+        <div class="card-tinted avoid-break">
+          <div style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--sage-700); margin-bottom:6px;" id="history-highlight-year">--</div>
+          <p style="margin:0; font-size:14px; line-height:1.8;" id="history-highlight-note"></p>
+        </div>
+      </section>
+
+      <!-- 04 全国公募の実際 -->
+      <section id="sec-04" style="scroll-margin-top:64px; margin-top:52px;">
+        <div class="sec-head">
+          <span class="sec-bar"></span>
+          <div><div class="sec-eyebrow">04 · National Recruitment</div><h2 class="sec-title">全国公募の実際</h2></div>
+        </div>
+        <div class="sec-rule"></div>
+        <div class="grid-2">
+          <div class="card avoid-break">
+            <div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--text-heading);">PR活動・環境整備</div>
+            <ul id="pr-list" style="margin:10px 0 0; padding-left:20px; font-size:14px; line-height:1.9; color:var(--text-body);"></ul>
+          </div>
+          <div class="card avoid-break">
+            <div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--text-heading);">出身地域</div>
+            <p id="origin-text" style="margin:10px 0 0; font-size:14px; line-height:1.85; color:var(--text-body);"></p>
+          </div>
+          <div class="card avoid-break">
+            <div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--text-heading);">選抜方法</div>
+            <p id="selection-text" style="margin:10px 0 0; font-size:14px; line-height:1.85; color:var(--text-body);"></p>
+          </div>
+          <div class="card avoid-break">
+            <div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--text-heading);">メリット・デメリット</div>
+            <div id="merit-demerit" style="margin-top:10px; font-size:14px; line-height:1.85;"></div>
+          </div>
+          <div class="card avoid-break">
+            <div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--text-heading);">入学してくる生徒像</div>
+            <ul id="profile-list" style="margin:10px 0 0; padding-left:20px; font-size:14px; line-height:1.9; color:var(--text-body);"></ul>
+          </div>
+          <div class="card avoid-break">
+            <div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--text-heading);">高校と自治体との連携体制</div>
+            <ul id="cooperation-list" style="margin:10px 0 0; padding-left:20px; font-size:14px; line-height:1.9; color:var(--text-body);"></ul>
+          </div>
+        </div>
+        <p id="resident-support-text" class="lead" style="margin-top:16px; font-size:14px; color:var(--text-muted);"></p>
+      </section>
+
+      <!-- 05 学生寮 -->
+      <section id="sec-05" style="scroll-margin-top:64px; margin-top:52px;">
+        <div class="sec-head">
+          <span class="sec-bar"></span>
+          <div><div class="sec-eyebrow">05 · Student Dormitory</div><h2 class="sec-title">学生寮(Penguin Dormitory / Penguin House)</h2></div>
+        </div>
+        <div class="sec-rule"></div>
+
+        <div class="grid-3 avoid-break" id="facility-cards" style="margin-bottom:18px;"></div>
+
+        <div class="card avoid-break" style="margin-bottom:18px;">
+          <div style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--text-heading); margin-bottom:10px;">整備スケジュール</div>
+          <table id="schedule-table"><thead><tr><th>年度</th><th>施設タイプ</th><th>室数</th><th>状況</th><th>財源</th></tr></thead><tbody></tbody></table>
+        </div>
+
+        <div class="card avoid-break" style="margin-bottom:18px;">
+          <div style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--text-heading); margin-bottom:4px;">現在の入寮状況(令和8年度)</div>
+          <p style="margin:0 0 10px; font-size:11.5px; color:var(--text-faint);">R8鹿追高校寮入寮者一覧.csv より集計(個人情報は集計値のみ使用)</p>
+          <div style="margin-top:6px; display:flex; align-items:baseline; gap:10px;">
+            <span id="occ-total" style="font-family:var(--font-sans); font-size:24px; font-weight:700; color:var(--slate-700);">--</span>
+            <span id="occ-rate" style="font-size:13px; color:var(--text-muted);">--</span>
+          </div>
+          <div id="occ-by-facility" style="margin-top:16px; display:flex; flex-direction:column; gap:18px;"></div>
+          <div style="display:flex; gap:18px; flex-wrap:wrap; margin-top:10px; font-size:12px; color:var(--text-muted);">
+            <span><span style="display:inline-block; width:11px; height:11px; background:var(--slate-500); margin-right:5px; vertical-align:middle; border-radius:3px;"></span>男子</span>
+            <span><span style="display:inline-block; width:11px; height:11px; background:var(--sage-500); margin-right:5px; vertical-align:middle; border-radius:3px;"></span>女子</span>
+            <span><span style="display:inline-block; width:11px; height:11px; background:#eae2d4; border:1px solid #d8cfc0; margin-right:5px; vertical-align:middle; border-radius:3px;"></span>空室</span>
+          </div>
+          <div style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+            <div>
+              <div style="font-size:13px; color:var(--text-muted); margin-bottom:6px;">学年別内訳</div>
+              <div id="occ-by-grade"></div>
+            </div>
+            <div>
+              <div style="font-size:13px; color:var(--text-muted); margin-bottom:6px;">都道府県別人数</div>
+              <div id="occ-by-prefecture"></div>
+            </div>
+          </div>
+          <p id="occ-outlook" style="margin:14px 0 0; font-size:13px; color:var(--text-muted); line-height:1.75;"></p>
+        </div>
+
+        <div class="grid-2 avoid-break" style="margin-bottom:18px;">
+          <div class="card">
+            <div style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--text-heading);" id="construction-dorm-title"></div>
+            <p id="construction-dorm-body" style="margin:10px 0 0; font-size:13.5px; line-height:1.85; color:var(--text-body);"></p>
+          </div>
+          <div class="card">
+            <div style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--text-heading);" id="construction-house-title"></div>
+            <p id="construction-house-body" style="margin:10px 0 0; font-size:13.5px; line-height:1.85; color:var(--text-body);"></p>
+          </div>
+        </div>
+
+        <div class="card avoid-break" style="margin-bottom:18px;">
+          <div style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--text-heading); margin-bottom:10px;">運営体制・委託費用</div>
+          <p id="operation-dorm-text" style="margin:0 0 10px; font-size:13.5px; line-height:1.85; color:var(--text-body);"></p>
+          <table id="cost-table"><thead><tr><th>年度</th><th>基本委託料</th><th>変動委託料(食事代)</th><th>合計</th></tr></thead><tbody></tbody></table>
+          <p id="operation-dorm-detail" style="margin:10px 0 0; font-size:13px; line-height:1.8; color:var(--text-muted);"></p>
+          <p id="operation-house-text" style="margin:10px 0 0; font-size:13.5px; line-height:1.85; color:var(--text-body);"></p>
+        </div>
+
+        <div class="grid-2 avoid-break" style="margin-bottom:18px;">
+          <div class="card">
+            <div style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--text-heading);">料金・減免制度</div>
+            <p id="pricing-text" style="margin:10px 0 0; font-size:13.5px; line-height:1.85; color:var(--text-body);"></p>
+          </div>
+          <div class="card">
+            <div style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--text-heading);">業務内容</div>
+            <ul id="duties-list" style="margin:10px 0 0; padding-left:18px; font-size:13.5px; line-height:1.85; color:var(--text-body);"></ul>
+          </div>
+        </div>
+        <p id="operation-challenges" class="lead" style="font-size:13.5px; color:var(--text-muted);"></p>
+      </section>
+
+      <!-- 06 事業内容と財政 -->
+      <section id="sec-06" style="scroll-margin-top:64px; margin-top:52px;">
+        <div class="sec-head">
+          <span class="sec-bar"></span>
+          <div><div class="sec-eyebrow">06 · Programs & Fiscal Structure</div><h2 class="sec-title">事業内容と財政</h2></div>
+        </div>
+        <div class="sec-rule"></div>
+
+        <!-- 6-0 事業内容 -->
+        <div class="card avoid-break" style="margin-bottom:20px;">
+          <div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--text-heading); margin-bottom:14px;">支援事業の種類(概要)</div>
+          <div id="program-types" class="grid-3"></div>
+        </div>
+
+        <!-- 6-1 サマリー -->
+        <div class="card-tinted avoid-break" style="padding:34px 36px 30px; margin-bottom:20px;">
+          <div style="font-family:var(--font-sans); font-size:13px; letter-spacing:.1em; color:var(--sage-700); text-transform:uppercase; font-weight:500;">歳出総額(令和8年度予算)</div>
+          <div style="margin-top:8px; display:flex; align-items:baseline; gap:12px;">
+            <span id="exp-total-display" style="font-family:var(--font-sans); font-size:44px; font-weight:700; line-height:1; color:var(--slate-700);">--</span>
+            <span id="exp-total-yen" style="font-size:14px; color:var(--text-muted); font-family:var(--font-sans);">--</span>
+          </div>
+          <div style="margin-top:26px;">
+            <div style="display:flex; height:58px; border-radius:11px; overflow:hidden; background:#eae2d4;">
+              <div id="seg-kofukin" class="seg-anim" style="width:0%; background:linear-gradient(180deg,var(--sage-500),var(--sage-600)); display:flex; flex-direction:column; justify-content:center; padding-left:18px; gap:2px;">
+                <span style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:#fff;">交付金等</span>
+                <span id="seg-kofukin-amount" style="font-size:12.5px; color:rgba(255,255,255,.9);">--</span>
+              </div>
+              <div id="seg-general" class="seg-anim" style="width:0%; background:var(--slate-600); display:flex; flex-direction:column; justify-content:center; padding-left:16px; gap:2px; animation-delay:.12s;">
+                <span style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:#fff;">一般財源</span>
+                <span id="seg-general-amount" style="font-size:12.5px; color:rgba(255,255,255,.85);">--</span>
+              </div>
+            </div>
+            <div style="display:flex; margin-top:10px;">
+              <div id="ratio-kofukin-col" style="width:0%; display:flex; align-items:baseline; gap:6px;"><span id="ratio-kofukin" style="font-family:var(--font-sans); font-size:26px; font-weight:700; color:var(--sage-700); line-height:1;">--</span><span style="color:var(--sage-600); font-family:var(--font-sans); font-weight:700;">%</span></div>
+              <div id="ratio-general-col" style="width:0%; display:flex; align-items:baseline; gap:6px;"><span id="ratio-general" style="font-family:var(--font-sans); font-size:26px; font-weight:700; color:var(--slate-700); line-height:1;">--</span><span style="color:var(--text-muted); font-family:var(--font-sans); font-weight:700;">%</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6-2 事業別内訳 -->
+        <div class="card avoid-break" style="margin-bottom:20px;">
+          <div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--text-heading); margin-bottom:14px;">事業別内訳</div>
+          <div style="display:flex; gap:28px; flex-wrap:wrap; align-items:center;">
+            <div id="business-donut"></div>
+            <div id="business-legend" style="flex:1; min-width:220px;"></div>
+          </div>
+        </div>
+
+        <!-- 6-3 歳入内訳 -->
+        <div class="card avoid-break">
+          <div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--text-heading); margin-bottom:10px;">歳入内訳(款・目・節・細節)</div>
+          <table id="revenue-table"><thead><tr><th>款</th><th>目</th><th>節</th><th>細節</th><th style="text-align:right;">予算確定額</th></tr></thead><tbody></tbody></table>
+        </div>
+      </section>
+
+      <!-- 07 生徒への支援内容 -->
+      <section id="sec-07" style="scroll-margin-top:64px; margin-top:52px;">
+        <div class="sec-head">
+          <span class="sec-bar"></span>
+          <div><div class="sec-eyebrow">07 · Student Support</div><h2 class="sec-title">生徒への支援内容</h2></div>
+        </div>
+        <div class="sec-rule"></div>
+        <div id="support-list" class="grid-3"></div>
+      </section>
+
+      <!-- 08 令和7年度 事業実績 -->
+      <section id="sec-08" style="scroll-margin-top:64px; margin-top:52px;">
+        <div class="sec-head">
+          <span class="sec-bar"></span>
+          <div style="flex:1;"><div class="sec-eyebrow">08 · FY Reiwa 7 Results</div><h2 class="sec-title">令和7年度 事業実績</h2></div>
+        </div>
+        <div class="sec-rule"></div>
+        <p style="margin:0 0 18px; font-size:14px; line-height:1.8; color:var(--text-muted);">令和7年度に実施した高校支援事業は、以下の通りです。</p>
+        <div id="program-list" style="border:1px solid #e8ded0; border-radius:13px; overflow:hidden;"></div>
+      </section>
+
+      <!-- 09 よくある質問 -->
+      <section id="sec-09" style="scroll-margin-top:64px; margin-top:52px;">
+        <div class="sec-head">
+          <span class="sec-bar"></span>
+          <div><div class="sec-eyebrow">09 · FAQ</div><h2 class="sec-title">よくある質問</h2></div>
+        </div>
+        <div class="sec-rule"></div>
+        <div id="faq-list" class="card"></div>
+      </section>
+
+      <!-- footer -->
+      <div style="margin-top:52px; padding-top:24px; border-top:1px solid var(--rule-divider); display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;">
+        <div style="font-size:14px; line-height:1.85; color:var(--text-muted);">
+          <div style="font-family:var(--font-sans); font-weight:700; color:var(--text-heading);">お問い合わせ</div>
+          鹿追町教育委員会 学校教育課<br>〒081-0292 北海道河東郡鹿追町東町1丁目<br>TEL 0156-66-2646
+        </div>
+        <div style="text-align:right; font-family:var(--font-sans); font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--text-faint);">Shikaoi&nbsp;Board&nbsp;of&nbsp;Education</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="../data/summary.js"></script>
+<script src="../data/content.js"></script>
+<script>
+(function () {
+  const S = window.SHIKAOI_SUMMARY;
+  const C = window.SHIKAOI_CONTENT;
+  const yen = (n) => "¥" + n.toLocaleString("ja-JP");
+  const esc = (s) => (s == null ? "" : String(s));
+
+  // ---------- hero / stat cards ----------
+  const r7 = S.enrollment_trend.find((e) => e["年度"] === "R7") || {};
+  document.getElementById("hero-lead").textContent = C.overview.lead;
+  document.getElementById("stat-enrollment").textContent = (r7["鹿高入学者人数"] ?? "--") + "名";
+  document.getElementById("stat-enrollment-sub").textContent = "うち道外" + (r7["道外入学者"] ?? "--") + "名";
+  const dormTotal = C.dormitory.facilities.find((f) => f.name === "合計");
+  document.getElementById("stat-dorm").textContent = dormTotal ? dormTotal.rooms + "体制" : "--";
+  document.getElementById("stat-expenditure").textContent = S.expenditure_total_display;
+  document.getElementById("stat-general-ratio").textContent = S.general_fund_ratio_percent + "%";
+  document.getElementById("stat-kofukin-note").textContent = "交付金等充当率" + S.kofukin_ratio_percent + "%";
+
+  // ---------- 02 reasons ----------
+  const reasonsList = document.getElementById("reasons-list");
+  C.reasons.forEach((r) => {
+    const div = document.createElement("div");
+    div.className = "card avoid-break";
+    div.innerHTML =
+      '<div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--sage-700); margin-bottom:8px;">' + esc(r.title) + "</div>" +
+      '<p style="margin:0; font-size:13.5px; line-height:1.85; color:var(--text-body);">' + esc(r.body) + "</p>";
+    reasonsList.appendChild(div);
+  });
+
+  const EC = C.educationCharter;
+  document.getElementById("charter-overview").textContent = EC.overview;
+  document.getElementById("charter-basic-policy").textContent = EC.basicPolicy;
+  const charterBody = document.querySelector("#charter-policy-table tbody");
+  EC.relatedPolicies.forEach((p) => {
+    const tr = document.createElement("tr");
+    tr.style.borderTop = "1px solid var(--rule-divider)";
+    tr.innerHTML = "<td style=\"font-weight:700; white-space:nowrap;\">" + esc(p.policy) + "</td><td>" + esc(p.detail) + "</td>";
+    charterBody.appendChild(tr);
+  });
+  document.getElementById("charter-relevance").textContent = EC.relevance;
+
+  // ---------- 03 history / trend chart (出身地域別・積み上げ棒 + 地元入学率・折れ線の複合グラフ) ----------
+  const trendData = S.enrollment_trend.filter((e) => e["西暦"] != null && e["西暦"] >= 2007);
+  function buildTrendChart(data) {
+    const W = 900, H = 300, ml = 34, mr = 34, mt = 20, mb = 46;
+    const plotW = W - ml - mr, plotH = H - mt - mb;
+    const n = data.length;
+    const bw = (plotW / n) * 0.6;
+    const xCenter = (i) => ml + (plotW * (i + 0.5)) / n;
+    const segments = [
+      { key: "町内入学者", color: "var(--sage-600)", label: "町内" },
+      { key: "管内入学者", color: "var(--sage-400)", label: "十勝管内" },
+      { key: "道内入学者", color: "var(--slate-500)", label: "道内" },
+      { key: "道外入学者", color: "var(--amber-500)", label: "道外" },
+    ];
+    const totals = data.map((d) => segments.reduce((sum, s) => sum + (d[s.key] || 0), 0));
+    const maxTotal = Math.max.apply(null, totals) * 1.1;
+    const yCount = (v) => mt + plotH - (v / maxTotal) * plotH;
+    const yPct = (v) => mt + plotH - (v / 100) * plotH;
+
+    let grid = "";
+    for (let g = 0; g <= 4; g++) {
+      const gy = mt + (plotH * g) / 4;
+      grid += '<line x1="' + ml + '" y1="' + gy.toFixed(1) + '" x2="' + (W - mr) + '" y2="' + gy.toFixed(1) + '" stroke="#e2dbcd" stroke-width="1" />';
+    }
+    let axisLabels = "";
+    for (let g = 0; g <= 4; g++) {
+      const gy = mt + (plotH * g) / 4;
+      axisLabels += '<text x="' + (ml - 6) + '" y="' + (gy + 3).toFixed(1) + '" font-size="9.5" fill="#8b989d" text-anchor="end" font-family="Noto Sans JP, sans-serif">' + Math.round(maxTotal * (1 - g / 4)) + "名</text>";
+      axisLabels += '<text x="' + (W - mr + 6) + '" y="' + (gy + 3).toFixed(1) + '" font-size="9.5" fill="var(--danger-500)" text-anchor="start" font-family="Noto Sans JP, sans-serif">' + Math.round(100 * (1 - g / 4)) + "%</text>";
+    }
+
+    let bars = "";
+    data.forEach((d, i) => {
+      let base = 0;
+      const cx = xCenter(i);
+      segments.forEach((s) => {
+        const v = d[s.key] || 0;
+        if (v <= 0) return;
+        const yTop = yCount(base + v);
+        const yBase = yCount(base);
+        bars += '<rect x="' + (cx - bw / 2).toFixed(1) + '" y="' + yTop.toFixed(1) + '" width="' + bw.toFixed(1) + '" height="' + (yBase - yTop).toFixed(1) + '" fill="' + s.color + '" rx="1.5" />';
+        base += v;
+      });
+    });
+
+    let totalLabels = "";
+    data.forEach((d, i) => {
+      if (totals[i] <= 0) return;
+      totalLabels += '<text x="' + xCenter(i).toFixed(1) + '" y="' + (yCount(totals[i]) - 6).toFixed(1) + '" font-size="9.5" font-weight="700" fill="var(--slate-700)" text-anchor="middle" font-family="Noto Sans JP, sans-serif">' + totals[i] + "</text>";
+    });
+
+    let ticks = "";
+    data.forEach((d, i) => {
+      ticks += '<text x="' + xCenter(i).toFixed(1) + '" y="' + (H - mb + 16) + '" font-size="9.5" fill="#8b989d" text-anchor="middle" font-family="Noto Sans JP, sans-serif">' + esc(d["西暦"]) + "</text>";
+    });
+
+    let linePath = "";
+    let lineDots = "";
+    data.forEach((d, i) => {
+      const v = d["地元入学率パーセント"];
+      if (v == null) return;
+      const px = xCenter(i), py = yPct(v);
+      linePath += (linePath ? "L" : "M") + px.toFixed(1) + "," + py.toFixed(1) + " ";
+      lineDots += '<circle cx="' + px.toFixed(1) + '" cy="' + py.toFixed(1) + '" r="2.6" fill="var(--danger-500)" stroke="#fff" stroke-width="0.8" />';
+    });
+
+    const r4idx = data.findIndex((d) => d["年度"] === "R4");
+    let r4mark = "";
+    if (r4idx >= 0) {
+      const px = xCenter(r4idx) - bw / 2 - 6;
+      r4mark =
+        '<line x1="' + px.toFixed(1) + '" y1="' + mt + '" x2="' + px.toFixed(1) + '" y2="' + (mt + plotH) + '" stroke="var(--danger-500)" stroke-width="1" stroke-dasharray="4 3" opacity="0.5" />' +
+        '<text x="' + px.toFixed(1) + '" y="' + (mt - 6) + '" font-size="9.5" fill="var(--danger-500)" text-anchor="middle" font-family="Noto Sans JP, sans-serif">←全国募集開始</text>';
+    }
+
+    return (
+      '<svg viewBox="0 0 ' + W + " " + H + '" width="100%" style="min-width:680px; display:block;">' +
+      grid + axisLabels + bars + totalLabels +
+      '<path d="' + linePath.trim() + '" fill="none" stroke="var(--danger-500)" stroke-width="1.8" />' +
+      lineDots + r4mark + ticks +
+      "</svg>"
+    );
+  }
+  document.getElementById("trend-chart").innerHTML = buildTrendChart(trendData);
+  document.getElementById("trend-legend").innerHTML =
+    '<span><span style="display:inline-block; width:11px; height:11px; background:var(--sage-600); margin-right:5px; vertical-align:middle; border-radius:2px;"></span>町内</span>' +
+    '<span><span style="display:inline-block; width:11px; height:11px; background:var(--sage-400); margin-right:5px; vertical-align:middle; border-radius:2px;"></span>十勝管内</span>' +
+    '<span><span style="display:inline-block; width:11px; height:11px; background:var(--slate-500); margin-right:5px; vertical-align:middle; border-radius:2px;"></span>道内</span>' +
+    '<span><span style="display:inline-block; width:11px; height:11px; background:var(--amber-500); margin-right:5px; vertical-align:middle; border-radius:2px;"></span>道外</span>' +
+    '<span><span style="display:inline-block; width:14px; height:2px; background:var(--danger-500); margin-right:6px; vertical-align:middle;"></span>地元入学率(町内÷総入学者、%・右軸)</span>';
+
+  document.getElementById("history-highlight-year").textContent = C.historyHighlight.year;
+  document.getElementById("history-highlight-note").textContent = C.historyHighlight.note;
+
+  const historyList = document.getElementById("history-list");
+  const historyCell = (text) => (text ? esc(text) : '<span class="history-empty">―</span>');
+  C.history.forEach((h) => {
+    const row = document.createElement("tr");
+    row.innerHTML =
+      '<td class="history-year">' + esc(h.year) + "(" + esc(h.era) + ")</td>" +
+      "<td>" + historyCell(h.internationalExchange) + "</td>" +
+      "<td>" + historyCell(h.integratedEducation) + "</td>" +
+      "<td>" + historyCell(h.highSchool) + "</td>";
+    historyList.appendChild(row);
+  });
+
+  // ---------- 04 national recruitment ----------
+  const NR = C.nationalRecruitment;
+  document.getElementById("pr-list").innerHTML = NR.prActivities.map((t) => "<li>" + esc(t) + "</li>").join("");
+  document.getElementById("origin-text").textContent = NR.origin;
+  document.getElementById("selection-text").textContent = NR.selection;
+  document.getElementById("merit-demerit").innerHTML =
+    '<div style="margin-bottom:8px;"><b style="color:var(--sage-700);">メリット</b><ul style="margin:4px 0 0; padding-left:18px;">' + NR.meritDemerit.merit.map((m) => "<li>" + esc(m) + "</li>").join("") + "</ul></div>" +
+    '<div><b style="color:var(--danger-500);">デメリット</b><ul style="margin:4px 0 0; padding-left:18px;">' + NR.meritDemerit.demerit.map((m) => "<li>" + esc(m) + "</li>").join("") + "</ul></div>";
+  document.getElementById("profile-list").innerHTML = NR.studentProfile.map((t) => "<li>" + esc(t) + "</li>").join("");
+  document.getElementById("cooperation-list").innerHTML = NR.cooperationStructure.map((t) => "<li>" + esc(t) + "</li>").join("");
+  document.getElementById("resident-support-text").textContent = "住民の協力: " + NR.residentSupport;
+
+  // ---------- 05 dormitory ----------
+  const D = C.dormitory;
+  const facilityCards = document.getElementById("facility-cards");
+  D.facilities.forEach((f) => {
+    const div = document.createElement("div");
+    div.className = "card-tinted";
+    div.innerHTML =
+      '<div style="font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--text-heading);">' + esc(f.name) + "</div>" +
+      '<div style="margin-top:6px; font-family:var(--font-sans); font-size:26px; font-weight:700; color:var(--sage-700);">' + esc(f.rooms) + "</div>" +
+      '<div style="margin-top:4px; font-size:12.5px; color:var(--text-muted);">' + esc(f.note) + "</div>";
+    facilityCards.appendChild(div);
+  });
+
+  const scheduleBody = document.querySelector("#schedule-table tbody");
+  D.schedule.forEach((s) => {
+    const tr = document.createElement("tr");
+    tr.style.borderTop = "1px solid var(--rule-divider)";
+    tr.innerHTML = "<td>" + esc(s.year) + "</td><td>" + esc(s.type) + "</td><td>" + esc(s.rooms) + "</td><td>" + esc(s.status) + "</td><td>" + esc(s.funding) + "</td>";
+    scheduleBody.appendChild(tr);
+  });
+
+  const DC = S.dormitory_current;
+  document.getElementById("occ-total").textContent = DC.total + "名";
+  document.getElementById("occ-rate").textContent = "全体利用率 " + (Math.round((DC.total / D.occupancy.capacityTotal) * 1000) / 10) + "%(定員" + D.occupancy.capacityTotal + "名に対して)";
+
+  // 部屋番号インフォグラフィック: 1マス=1室(定員1名)。男子=slate、女子=sage、空室=グレー。
+  function roomGrid(capacity, segments) {
+    let cells = "";
+    let n = 0;
+    segments.forEach((seg) => {
+      for (let i = 0; i < seg.count && n < capacity; i++, n++) {
+        cells += '<div class="room-cell" style="background:' + seg.color + "; color:#fff;\">" + (n + 1) + "</div>";
+      }
+    });
+    for (; n < capacity; n++) {
+      cells += '<div class="room-cell" style="background:#eae2d4; color:#a89f8f;">' + (n + 1) + "</div>";
+    }
+    return '<div class="room-grid">' + cells + "</div>";
+  }
+  const facilityWrap = document.getElementById("occ-by-facility");
+  DC.by_facility.forEach((f) => {
+    const row = document.createElement("div");
+    row.className = "room-block-row avoid-break";
+    let groups = "";
+    if (f.capacity_male != null) {
+      groups +=
+        '<div><div style="font-size:11.5px; color:var(--text-muted); margin-bottom:4px;">男子 ' + f.male + " / " + f.capacity_male + "名</div>" +
+        roomGrid(f.capacity_male, [{ count: f.male, color: "var(--slate-500)" }]) + "</div>";
+      groups +=
+        '<div><div style="font-size:11.5px; color:var(--text-muted); margin-bottom:4px;">女子 ' + f.female + " / " + f.capacity_female + "名</div>" +
+        roomGrid(f.capacity_female, [{ count: f.female, color: "var(--sage-500)" }]) + "</div>";
+    } else {
+      groups +=
+        '<div><div style="font-size:11.5px; color:var(--text-muted); margin-bottom:4px;">計' + f.count + " / " + f.capacity_total + "名(男" + f.male + "・女" + f.female + ")</div>" +
+        roomGrid(f.capacity_total, [
+          { count: f.male, color: "var(--slate-500)" },
+          { count: f.female, color: "var(--sage-500)" },
+        ]) + "</div>";
+    }
+    row.innerHTML =
+      '<div class="room-block-label">' + esc(f.name) + "</div>" +
+      '<div class="room-block-groups">' + groups + "</div>";
+    facilityWrap.appendChild(row);
+  });
+
+  const gradeWrap = document.getElementById("occ-by-grade");
+  const gradeMax = Math.max.apply(null, DC.by_grade.map((g) => g.count));
+  DC.by_grade.forEach((g) => {
+    const row = document.createElement("div");
+    row.className = "bar-row";
+    row.innerHTML =
+      '<div class="bar-label">' + esc(g.grade) + '</div><div class="bar-track"><div class="bar-fill" style="width:' + ((g.count / gradeMax) * 100).toFixed(1) + '%; background:var(--sage-500);"></div></div>' +
+      '<div class="bar-value">' + g.count + "名</div>";
+    gradeWrap.appendChild(row);
+  });
+
+  const prefWrap = document.getElementById("occ-by-prefecture");
+  const prefMax = Math.max.apply(null, DC.by_prefecture.map((p) => p.count));
+  DC.by_prefecture.forEach((p) => {
+    const row = document.createElement("div");
+    row.className = "bar-row";
+    row.innerHTML =
+      '<div class="bar-label">' + esc(p.prefecture) + '</div><div class="bar-track"><div class="bar-fill" style="width:' + ((p.count / prefMax) * 100).toFixed(1) + '%; background:var(--slate-500);"></div></div>' +
+      '<div class="bar-value">' + p.count + "名</div>";
+    prefWrap.appendChild(row);
+  });
+  document.getElementById("occ-outlook").textContent = D.occupancy.outlook;
+
+  document.getElementById("construction-dorm-title").textContent = D.construction.dormitory.title;
+  document.getElementById("construction-dorm-body").textContent =
+    "所在地" + D.construction.dormitory.location + "、敷地面積" + D.construction.dormitory.site + "、" + D.construction.dormitory.structure + "、竣工" + D.construction.dormitory.completion + "。" +
+    D.construction.dormitory.rooms + "。契約:" + D.construction.dormitory.contract.method + "、契約相手方" + D.construction.dormitory.contract.contractor + "、契約金額" + D.construction.dormitory.contract.amount + "。" +
+    D.construction.dormitory.costBreakdown + " 財源:" + D.construction.dormitory.funding + "。";
+  document.getElementById("construction-house-title").textContent = D.construction.house.title;
+  document.getElementById("construction-house-body").textContent = D.construction.house.content + " " + D.construction.house.costBreakdown + " 財源:" + D.construction.house.funding;
+
+  document.getElementById("operation-dorm-text").innerHTML =
+    "<b>Penguin Dormitory:</b> " + D.operation.dormitory.method + "。委託先:" + D.operation.dormitory.contractor + "。契約期間:" + D.operation.dormitory.period;
+  const costBody = document.querySelector("#cost-table tbody");
+  D.operation.dormitory.costByYear.forEach((c) => {
+    const tr = document.createElement("tr");
+    tr.style.borderTop = "1px solid var(--rule-divider)";
+    tr.innerHTML = "<td>" + esc(c.year) + "</td><td>" + esc(c.fixed) + "</td><td>" + esc(c.variable) + "</td><td>" + esc(c.total) + "</td>";
+    costBody.appendChild(tr);
+  });
+  document.getElementById("operation-dorm-detail").textContent =
+    D.operation.dormitory.costDetailR7 + " " + D.operation.dormitory.revenue + " 費用負担:" + D.operation.dormitory.costBurden;
+  document.getElementById("operation-house-text").innerHTML =
+    "<b>Penguin House:</b> " + D.operation.house.method + "。" + D.operation.house.houseMaster + "。";
+
+  document.getElementById("pricing-text").textContent =
+    D.operation.pricing.current + "。" + D.operation.pricing.revisionDecided + "。" + D.operation.pricing.future + "。減免:" + D.operation.pricing.discount + "。背景:" + D.operation.pricing.background;
+  document.getElementById("duties-list").innerHTML = D.operation.duties.map((d) => "<li>" + esc(d) + "</li>").join("");
+  document.getElementById("operation-challenges").textContent = "運営体制の連携: " + D.operation.management + " 今後の課題: " + D.operation.challenges;
+
+  // ---------- 06 finance ----------
+  document.getElementById("exp-total-display").textContent = S.expenditure_total_display;
+  document.getElementById("exp-total-yen").textContent = yen(S.expenditure_total_yen);
+  document.getElementById("seg-kofukin").style.width = S.kofukin_ratio_percent + "%";
+  document.getElementById("seg-general").style.width = S.general_fund_ratio_percent + "%";
+  document.getElementById("seg-kofukin-amount").textContent = S.revenue_total_display;
+  document.getElementById("seg-general-amount").textContent = S.general_fund_display;
+  document.getElementById("ratio-kofukin-col").style.width = S.kofukin_ratio_percent + "%";
+  document.getElementById("ratio-general-col").style.width = S.general_fund_ratio_percent + "%";
+  document.getElementById("ratio-kofukin").textContent = S.kofukin_ratio_percent;
+  document.getElementById("ratio-general").textContent = S.general_fund_ratio_percent;
+
+  function ringChart(items, size, stroke) {
+    const r = (size - stroke) / 2;
+    const c = 2 * Math.PI * r;
+    const total = items.reduce((a, i) => a + i.value, 0);
+    let offset = 0;
+    const circles = items
+      .map((it) => {
+        const frac = it.value / total;
+        const len = frac * c;
+        const dasharray = len.toFixed(1) + " " + (c - len).toFixed(1);
+        const dashoffset = (-offset).toFixed(1);
+        offset += len;
+        return '<circle cx="' + size / 2 + '" cy="' + size / 2 + '" r="' + r + '" fill="none" stroke="' + it.color + '" stroke-width="' + stroke + '" stroke-dasharray="' + dasharray + '" stroke-dashoffset="' + dashoffset + '" transform="rotate(-90 ' + size / 2 + " " + size / 2 + ')" />';
+      })
+      .join("");
+    return '<svg viewBox="0 0 ' + size + " " + size + '" width="' + size + '" height="' + size + '">' + circles + "</svg>";
+  }
+  const businessColors = ["var(--sage-500)", "var(--slate-600)", "var(--amber-500)"];
+  const bb = S.business_breakdown;
+  document.getElementById("business-donut").innerHTML = ringChart(
+    bb.map((b, i) => ({ value: b["予算確定額円"], color: businessColors[i % businessColors.length] })),
+    180,
+    32
+  );
+  document.getElementById("business-legend").innerHTML = bb
+    .map((b, i) => {
+      const pct = ((b["予算確定額円"] / S.expenditure_total_yen) * 100).toFixed(1);
+      return (
+        '<div style="display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid var(--rule-divider);">' +
+        '<span style="width:12px; height:12px; border-radius:3px; background:' + businessColors[i % businessColors.length] + '; flex:none;"></span>' +
+        '<span style="flex:1; font-size:14px; font-family:var(--font-sans); font-weight:700; color:var(--text-heading);">' + esc(b["事業名称"]) + "</span>" +
+        '<span style="font-family:var(--font-sans); font-size:14px; font-weight:700; color:var(--text-heading);">' + yen(b["予算確定額円"]) + " (" + pct + "%)</span>" +
+        "</div>"
+      );
+    })
+    .join("");
+
+  const programTypes = document.getElementById("program-types");
+  C.programTypes.forEach((p) => {
+    const div = document.createElement("div");
+    div.className = "card-tinted avoid-break";
+    div.style.cssText = "padding:14px 16px; font-size:13.5px; font-weight:700; color:var(--text-heading); text-align:center; display:flex; align-items:center; justify-content:center;";
+    div.textContent = p;
+    programTypes.appendChild(div);
+  });
+
+  const revenueBody = document.querySelector("#revenue-table tbody");
+  let revenueTotal = 0;
+  S.revenue_breakdown.forEach((r) => {
+    revenueTotal += r["予算確定額円"];
+    const tr = document.createElement("tr");
+    tr.style.borderTop = "1px solid var(--rule-divider)";
+    tr.innerHTML =
+      "<td>" + esc(r["款名称"]) + "</td><td>" + esc(r["目名称"]) + "</td><td>" + esc(r["節名称"]) + "</td><td>" + esc(r["細節名称"]) + '</td><td style="text-align:right; font-family:var(--font-sans); font-weight:700;">' + yen(r["予算確定額円"]) + "</td>";
+    revenueBody.appendChild(tr);
+  });
+  const totalTr = document.createElement("tr");
+  totalTr.style.borderTop = "2px solid var(--slate-500)";
+  totalTr.innerHTML = '<td colspan="4" style="font-weight:700; font-family:var(--font-sans);">歳入合計</td><td style="text-align:right; font-family:var(--font-sans); font-weight:700; color:var(--sage-700);">' + yen(revenueTotal) + "</td>";
+  revenueBody.appendChild(totalTr);
+
+  // ---------- 07 student support ----------
+  const supportList = document.getElementById("support-list");
+  C.studentSupport.forEach((s) => {
+    const div = document.createElement("div");
+    div.className = "card avoid-break";
+    div.innerHTML =
+      '<div style="font-family:var(--font-sans); font-weight:700; font-size:15px; color:var(--sage-700); margin-bottom:8px;">' + esc(s.title) + "</div>" +
+      '<ul style="margin:0; padding-left:18px; font-size:13.5px; line-height:1.85; color:var(--text-body);">' + s.items.map((i) => "<li>" + esc(i) + "</li>").join("") + "</ul>";
+    supportList.appendChild(div);
+  });
+
+  // ---------- 08 programs ----------
+  const programList = document.getElementById("program-list");
+  C.programs.forEach((p, i) => {
+    const row = document.createElement("div");
+    row.style.cssText = "display:flex; align-items:center; gap:16px; padding:17px 22px;" + (i < C.programs.length - 1 ? " border-bottom:1px solid var(--rule-divider);" : "");
+    row.innerHTML =
+      '<div style="width:34px; height:34px; flex:none; border-radius:50%; background:var(--sage-100); border:1.5px solid var(--sage-400);"></div>' +
+      '<div style="flex:1;"><div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading);">' + esc(p.name) + "</div>" +
+      '<div style="font-size:14px; color:var(--text-muted); margin-top:2px;">' + esc(p.detail) + "</div></div>";
+    programList.appendChild(row);
+  });
+
+  // ---------- 09 faq ----------
+  const faqList = document.getElementById("faq-list");
+  C.faq.forEach((f) => {
+    const div = document.createElement("div");
+    div.className = "faq-item";
+    div.innerHTML =
+      '<div class="faq-q"><i data-lucide="help-circle" style="width:18px; height:18px; color:var(--sage-600); flex:none;"></i><span>' + esc(f.q) + "</span></div>" +
+      '<div class="faq-a">' + esc(f.a) + "</div>";
+    faqList.appendChild(div);
+  });
+
+  if (window.lucide) window.lucide.createIcons();
+
+  // active nav via IntersectionObserver
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          document.querySelectorAll("[data-nav]").forEach((a) => {
+            a.classList.toggle("active", a.getAttribute("data-nav") === e.target.id);
+          });
+        }
+      });
+    },
+    { rootMargin: "-45% 0px -50% 0px" }
+  );
+  document.querySelectorAll("section[id^='sec-']").forEach((s) => io.observe(s));
+
+  document.querySelectorAll(".nav-link").forEach((a) => {
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      const id = a.getAttribute("data-nav");
+      const el = document.getElementById(id);
+      if (!el) return;
+      const y = el.getBoundingClientRect().top + window.scrollY - 60;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    });
+  });
+
+  document.getElementById("print-btn").addEventListener("click", () => window.print());
+})();
+</script>
+</body>
+</html>
