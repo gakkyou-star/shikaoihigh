@@ -360,7 +360,6 @@
           <div style="font-family:var(--font-sans); font-size:16px; letter-spacing:.1em; color:var(--sage-700); text-transform:uppercase; font-weight:500;">歳出総額(令和8年度予算)</div>
           <div style="margin-top:8px; display:flex; align-items:baseline; gap:12px;">
             <span id="exp-total-display" style="font-family:var(--font-sans); font-size:44px; font-weight:700; line-height:1; color:var(--slate-700);">--</span>
-            <span id="exp-total-yen" style="font-size:16px; color:var(--text-muted); font-family:var(--font-sans);">--</span>
           </div>
           <div style="margin-top:26px;">
             <div style="display:flex; height:58px; border-radius:11px; overflow:hidden; background:#eae2d4;">
@@ -1438,7 +1437,7 @@ window.SHIKAOI_CONTENT = {
 (function () {
   const S = window.SHIKAOI_SUMMARY;
   const C = window.SHIKAOI_CONTENT;
-  const yen = (n) => "¥" + n.toLocaleString("ja-JP");
+  const manyen = (n) => Math.round(n / 10000).toLocaleString("ja-JP") + "万円";
   const esc = (s) => (s == null ? "" : String(s));
   const kvTable = (rows) =>
     '<table style="margin-top:4px;">' +
@@ -1480,7 +1479,7 @@ window.SHIKAOI_CONTENT = {
   document.getElementById("stat-enrollment-sub").textContent = "うち道外" + (r8["道外入学者"] ?? "--") + "名";
   const dormTotal = C.dormitory.facilities.find((f) => f.name === "合計");
   document.getElementById("stat-dorm").textContent = dormTotal ? dormTotal.rooms + "体制" : "--";
-  document.getElementById("stat-expenditure").textContent = S.expenditure_total_display;
+  document.getElementById("stat-expenditure").textContent = manyen(S.expenditure_total_yen);
   document.getElementById("stat-general-ratio").textContent = S.general_fund_ratio_percent + "%";
   document.getElementById("stat-kofukin-note").textContent = "交付金等充当率" + S.kofukin_ratio_percent + "%";
 
@@ -1763,12 +1762,11 @@ window.SHIKAOI_CONTENT = {
     '<tr style="border-top:1px solid var(--rule-divider);"><td style="font-weight:700; color:var(--text-heading); vertical-align:top; white-space:nowrap;">今後の課題</td><td>' + bulletize(D.operation.challenges) + "</td></tr></table>";
 
   // ---------- 06 finance ----------
-  document.getElementById("exp-total-display").textContent = S.expenditure_total_display;
-  document.getElementById("exp-total-yen").textContent = yen(S.expenditure_total_yen);
+  document.getElementById("exp-total-display").textContent = manyen(S.expenditure_total_yen);
   document.getElementById("seg-kofukin").style.width = S.kofukin_ratio_percent + "%";
   document.getElementById("seg-general").style.width = S.general_fund_ratio_percent + "%";
-  document.getElementById("seg-kofukin-amount").textContent = S.revenue_total_display;
-  document.getElementById("seg-general-amount").textContent = S.general_fund_display;
+  document.getElementById("seg-kofukin-amount").textContent = manyen(S.revenue_total_yen);
+  document.getElementById("seg-general-amount").textContent = manyen(S.general_fund_yen);
   document.getElementById("ratio-kofukin-col").style.width = S.kofukin_ratio_percent + "%";
   document.getElementById("ratio-general-col").style.width = S.general_fund_ratio_percent + "%";
   document.getElementById("ratio-kofukin").textContent = S.kofukin_ratio_percent;
@@ -1805,7 +1803,7 @@ window.SHIKAOI_CONTENT = {
         '<div style="display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid var(--rule-divider);">' +
         '<span style="width:12px; height:12px; border-radius:3px; background:' + businessColors[i % businessColors.length] + '; flex:none;"></span>' +
         '<span style="flex:1; font-size:16px; font-family:var(--font-sans); font-weight:700; color:var(--text-heading);">' + esc(b["事業名称"]) + "</span>" +
-        '<span style="font-family:var(--font-sans); font-size:16px; font-weight:700; color:var(--text-heading);">' + yen(b["予算確定額円"]) + " (" + pct + "%)</span>" +
+        '<span style="font-family:var(--font-sans); font-size:16px; font-weight:700; color:var(--text-heading);">' + manyen(b["予算確定額円"]) + " (" + pct + "%)</span>" +
         "</div>"
       );
     })
@@ -1821,18 +1819,31 @@ window.SHIKAOI_CONTENT = {
   });
 
   const revenueBody = document.querySelector("#revenue-table tbody");
+  const OTHER_THRESHOLD_YEN = 1000000;
   let revenueTotal = 0;
+  let otherTotal = 0;
   S.revenue_breakdown.forEach((r) => {
     revenueTotal += r["予算確定額円"];
+    if (r["予算確定額円"] <= OTHER_THRESHOLD_YEN) {
+      otherTotal += r["予算確定額円"];
+      return;
+    }
     const tr = document.createElement("tr");
     tr.style.borderTop = "1px solid var(--rule-divider)";
     tr.innerHTML =
-      "<td>" + esc(r["細節名称"]) + '</td><td style="text-align:right; font-family:var(--font-sans); font-weight:700;">' + yen(r["予算確定額円"]) + "</td>";
+      "<td>" + esc(r["細節名称"]) + '</td><td style="text-align:right; font-family:var(--font-sans); font-weight:700;">' + manyen(r["予算確定額円"]) + "</td>";
     revenueBody.appendChild(tr);
   });
+  if (otherTotal > 0) {
+    const otherTr = document.createElement("tr");
+    otherTr.style.borderTop = "1px solid var(--rule-divider)";
+    otherTr.innerHTML =
+      '<td>その他(100万円以下の項目)</td><td style="text-align:right; font-family:var(--font-sans); font-weight:700;">' + manyen(otherTotal) + "</td>";
+    revenueBody.appendChild(otherTr);
+  }
   const totalTr = document.createElement("tr");
   totalTr.style.borderTop = "2px solid var(--slate-500)";
-  totalTr.innerHTML = '<td style="font-weight:700; font-family:var(--font-sans);">歳入合計</td><td style="text-align:right; font-family:var(--font-sans); font-weight:700; color:var(--sage-700);">' + yen(revenueTotal) + "</td>";
+  totalTr.innerHTML = '<td style="font-weight:700; font-family:var(--font-sans);">歳入合計</td><td style="text-align:right; font-family:var(--font-sans); font-weight:700; color:var(--sage-700);">' + manyen(revenueTotal) + "</td>";
   revenueBody.appendChild(totalTr);
 
   // ---------- 07 student support ----------
