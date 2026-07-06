@@ -291,11 +291,7 @@
             <span id="occ-rate" style="font-size:16px; color:var(--text-muted);">--</span>
           </div>
           <div id="occ-by-facility" style="margin-top:16px; display:flex; flex-direction:column; gap:18px;"></div>
-          <div style="display:flex; gap:18px; flex-wrap:wrap; margin-top:10px; font-size:16px; color:var(--text-muted);">
-            <span><span style="display:inline-block; width:11px; height:11px; background:var(--slate-500); margin-right:5px; vertical-align:middle; border-radius:3px;"></span>男子</span>
-            <span><span style="display:inline-block; width:11px; height:11px; background:var(--sage-500); margin-right:5px; vertical-align:middle; border-radius:3px;"></span>女子</span>
-            <span><span style="display:inline-block; width:11px; height:11px; background:#eae2d4; border:1px solid #d8cfc0; margin-right:5px; vertical-align:middle; border-radius:3px;"></span>空室</span>
-          </div>
+          <div id="occ-legend" style="display:flex; gap:14px; flex-wrap:wrap; margin-top:10px; font-size:16px; color:var(--text-muted);"></div>
           <div style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:24px;">
             <div>
               <div style="font-size:16px; color:var(--text-muted); margin-bottom:6px;">学年別内訳</div>
@@ -1042,7 +1038,35 @@ window.SHIKAOI_SUMMARY = {
         "female": 17,
         "capacity_male": 20,
         "capacity_female": 20,
-        "capacity_total": 40
+        "capacity_total": 40,
+        "male_by_grade": [
+          {
+            "grade": "1年生",
+            "count": 2
+          },
+          {
+            "grade": "2年生",
+            "count": 5
+          },
+          {
+            "grade": "3年生",
+            "count": 4
+          }
+        ],
+        "female_by_grade": [
+          {
+            "grade": "1年生",
+            "count": 0
+          },
+          {
+            "grade": "2年生",
+            "count": 16
+          },
+          {
+            "grade": "3年生",
+            "count": 1
+          }
+        ]
       },
       {
         "name": "Penguin House",
@@ -1051,7 +1075,35 @@ window.SHIKAOI_SUMMARY = {
         "female": 11,
         "capacity_male": null,
         "capacity_female": null,
-        "capacity_total": 33
+        "capacity_total": 33,
+        "male_by_grade": [
+          {
+            "grade": "1年生",
+            "count": 0
+          },
+          {
+            "grade": "2年生",
+            "count": 4
+          },
+          {
+            "grade": "3年生",
+            "count": 5
+          }
+        ],
+        "female_by_grade": [
+          {
+            "grade": "1年生",
+            "count": 4
+          },
+          {
+            "grade": "2年生",
+            "count": 1
+          },
+          {
+            "grade": "3年生",
+            "count": 6
+          }
+        ]
       }
     ],
     "by_grade": [
@@ -1649,7 +1701,25 @@ window.SHIKAOI_CONTENT = {
   document.getElementById("occ-total").textContent = DC.total + "名";
   document.getElementById("occ-rate").textContent = "全体利用率 " + (Math.round((DC.total / D.occupancy.capacityTotal) * 1000) / 10) + "%(定員" + D.occupancy.capacityTotal + "名に対して)";
 
-  // 部屋番号インフォグラフィック: 1マス=1室(定員1名)。男子=slate、女子=sage、空室=グレー。
+  // 部屋番号インフォグラフィック: 1マス=1室(定員1名)。性別は色相(男子=slate系、女子=sage系)、
+  // 学年は濃淡(1年生=薄い〜3年生=濃い)で表現。空室=グレー。
+  const GRADE_SHADES = {
+    male: [
+      { grade: "1年生", color: "var(--slate-400)" },
+      { grade: "2年生", color: "var(--slate-600)" },
+      { grade: "3年生", color: "var(--slate-800)" },
+    ],
+    female: [
+      { grade: "1年生", color: "var(--sage-300)" },
+      { grade: "2年生", color: "var(--sage-500)" },
+      { grade: "3年生", color: "var(--sage-700)" },
+    ],
+  };
+  const gradeSegments = (byGrade, shades) =>
+    shades.map((s) => ({
+      count: (byGrade.find((g) => g.grade === s.grade) || {}).count || 0,
+      color: s.color,
+    }));
   function roomGrid(capacity, segments) {
     let cells = "";
     let n = 0;
@@ -1671,16 +1741,16 @@ window.SHIKAOI_CONTENT = {
     if (f.capacity_male != null) {
       groups +=
         '<div><div style="font-size:16px; color:var(--text-muted); margin-bottom:4px;">男子 ' + f.male + " / " + f.capacity_male + "名</div>" +
-        roomGrid(f.capacity_male, [{ count: f.male, color: "var(--slate-500)" }]) + "</div>";
+        roomGrid(f.capacity_male, gradeSegments(f.male_by_grade, GRADE_SHADES.male)) + "</div>";
       groups +=
         '<div><div style="font-size:16px; color:var(--text-muted); margin-bottom:4px;">女子 ' + f.female + " / " + f.capacity_female + "名</div>" +
-        roomGrid(f.capacity_female, [{ count: f.female, color: "var(--sage-500)" }]) + "</div>";
+        roomGrid(f.capacity_female, gradeSegments(f.female_by_grade, GRADE_SHADES.female)) + "</div>";
     } else {
       groups +=
         '<div><div style="font-size:16px; color:var(--text-muted); margin-bottom:4px;">計' + f.count + " / " + f.capacity_total + "名(男" + f.male + "・女" + f.female + ")</div>" +
         roomGrid(f.capacity_total, [
-          { count: f.male, color: "var(--slate-500)" },
-          { count: f.female, color: "var(--sage-500)" },
+          ...gradeSegments(f.male_by_grade, GRADE_SHADES.male),
+          ...gradeSegments(f.female_by_grade, GRADE_SHADES.female),
         ]) + "</div>";
     }
     row.innerHTML =
@@ -1688,6 +1758,12 @@ window.SHIKAOI_CONTENT = {
       '<div class="room-block-groups">' + groups + "</div>";
     facilityWrap.appendChild(row);
   });
+  const swatch = (color, label) =>
+    '<span><span style="display:inline-block; width:11px; height:11px; background:' + color + '; margin-right:5px; vertical-align:middle; border-radius:3px;"></span>' + label + "</span>";
+  document.getElementById("occ-legend").innerHTML =
+    GRADE_SHADES.male.map((s) => swatch(s.color, "男子" + s.grade)).join("") +
+    GRADE_SHADES.female.map((s) => swatch(s.color, "女子" + s.grade)).join("") +
+    swatch("#eae2d4", "空室");
 
   const gradeWrap = document.getElementById("occ-by-grade");
   const gradeMax = Math.max.apply(null, DC.by_grade.map((g) => g.count));
