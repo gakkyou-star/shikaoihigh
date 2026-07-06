@@ -48,7 +48,7 @@
   .pill{ display:inline-flex; align-items:center; gap:6px; font-family:var(--font-sans); font-size:16px; font-weight:700; padding:4px 12px; border-radius:999px; }
 
   @media print{
-    body{ background:#fff; }
+    body{ background:#fff; zoom:83.3%; }
     .no-print{ display:none !important; }
     .doc{ box-shadow:none !important; margin:0 !important; width:100% !important; max-width:100% !important; }
     .seg-anim{ animation:none !important; }
@@ -324,7 +324,7 @@
           <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); margin-bottom:10px;">運営体制・委託費用</div>
           <p id="operation-dorm-text" style="margin:0 0 10px; font-size:16px; line-height:1.85; color:var(--text-body);"></p>
           <table id="cost-table"><thead><tr><th>年度</th><th>基本委託料</th><th>変動委託料(食事代)</th><th>合計</th></tr></thead><tbody></tbody></table>
-          <p id="operation-dorm-detail" style="margin:10px 0 0; font-size:16px; line-height:1.8; color:var(--text-muted);"></p>
+          <div id="operation-dorm-detail" style="margin-top:10px; font-size:16px; color:var(--text-muted);"></div>
           <p id="operation-house-text" style="margin:10px 0 0; font-size:16px; line-height:1.85; color:var(--text-body);"></p>
         </div>
 
@@ -1331,7 +1331,7 @@ window.SHIKAOI_CONTENT = {
       },
       pricing: {
         current: "2025年度までは月35,000円(食費・光熱水費込み)",
-        revisionDecided: "寮費改定は令和6年度に決定しました。ただし急激な負担増を避けるため据え置き期間を設けており、在寮生・新規入寮者ともに一定期間は現行料金(月35,000円)が維持されます",
+        revisionDecided: "寮費改定は令和6年度に決定しました。ただし急激な負担増を避けるため据え置き期間を設けており、在寮生・新規入寮者ともに一定期間は現行料金(月35,000円)が維持されます。なお、令和8年度入寮者からは新寮費で運用されています。",
         future: "3年間の段階的移行計画により、据え置き期間を経て2028年度からはPenguin Dormitory 80,000円、Penguin House 70,000円に改定予定",
         discount: "世帯収入に応じた20%〜50%の減免、経過措置との併用により保護者負担を軽減",
         background: "受益者負担の適正化、急激な負担増の回避、家計状況に応じた支援制度の両立を図る",
@@ -1454,6 +1454,24 @@ window.SHIKAOI_CONTENT = {
       )
       .join("") +
     "</table>";
+  const kvTableHtml = (rows) =>
+    '<table style="margin-top:4px;">' +
+    rows
+      .filter((r) => r[1])
+      .map(
+        (r) =>
+          '<tr style="border-top:1px solid var(--rule-divider);"><td style="width:26%; font-weight:700; color:var(--text-heading); vertical-align:top; white-space:nowrap;">' +
+          esc(r[0]) +
+          '</td><td style="color:var(--text-body);">' +
+          r[1] +
+          "</td></tr>"
+      )
+      .join("") +
+    "</table>";
+  const bulletize = (text) =>
+    "<ul style=\"margin:0; padding-left:18px; line-height:1.85;\">" +
+    text.split("。").map((s) => s.trim()).filter(Boolean).map((s) => "<li>" + esc(s) + "。</li>").join("") +
+    "</ul>";
 
   // ---------- hero / stat cards ----------
   const r8 = S.enrollment_trend.find((e) => e["年度"] === "R8") || {};
@@ -1724,8 +1742,11 @@ window.SHIKAOI_CONTENT = {
     tr.innerHTML = "<td>" + esc(c.year) + "</td><td>" + esc(c.fixed) + "</td><td>" + esc(c.variable) + "</td><td>" + esc(c.total) + "</td>";
     costBody.appendChild(tr);
   });
-  document.getElementById("operation-dorm-detail").textContent =
-    D.operation.dormitory.costDetailR7 + " " + D.operation.dormitory.revenue + " 費用負担:" + D.operation.dormitory.costBurden;
+  document.getElementById("operation-dorm-detail").innerHTML = kvTableHtml([
+    ["委託費内訳(令和7年度)", bulletize(D.operation.dormitory.costDetailR7)],
+    ["寮費収入", bulletize(D.operation.dormitory.revenue)],
+    ["費用負担", bulletize(D.operation.dormitory.costBurden)],
+  ]);
   document.getElementById("operation-house-text").innerHTML =
     "<b>Penguin House:</b> " + D.operation.house.method + "。" + D.operation.house.houseMaster + "。";
 
@@ -1737,10 +1758,6 @@ window.SHIKAOI_CONTENT = {
     ["背景", D.operation.pricing.background],
   ]);
   document.getElementById("duties-list").innerHTML = D.operation.duties.map((d) => "<li>" + esc(d) + "</li>").join("");
-  const bulletize = (text) =>
-    "<ul style=\"margin:0; padding-left:18px; line-height:1.85;\">" +
-    text.split("。").map((s) => s.trim()).filter(Boolean).map((s) => "<li>" + esc(s) + "。</li>").join("") +
-    "</ul>";
   document.getElementById("operation-challenges").innerHTML =
     '<table><tr><td style="width:20%; font-weight:700; color:var(--text-heading); vertical-align:top; white-space:nowrap;">運営体制の連携</td><td>' + bulletize(D.operation.management) + "</td></tr>" +
     '<tr style="border-top:1px solid var(--rule-divider);"><td style="font-weight:700; color:var(--text-heading); vertical-align:top; white-space:nowrap;">今後の課題</td><td>' + bulletize(D.operation.challenges) + "</td></tr></table>";
