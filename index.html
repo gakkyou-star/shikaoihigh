@@ -27,7 +27,7 @@
   body{ margin:0; background:#f7f2ea; font-family:var(--font-body); color:var(--text-body); -webkit-font-smoothing:antialiased; }
   a{ color:inherit; }
   table{ border-collapse:collapse; width:100%; }
-  th,td{ text-align:left; padding:10px 12px; font-size:16px; }
+  th,td{ text-align:left; padding:10px 12px; font-size:16px; line-height:1.7; }
 
   @keyframes grow{ from{ transform:scaleX(0); } to{ transform:scaleX(1); } }
   .seg-anim{ transform-origin:left center; animation:grow .9s cubic-bezier(.4,0,.2,1) both; }
@@ -127,8 +127,7 @@
         <a class="nav-link" data-nav="sec-05" href="#sec-05">05 学生寮</a>
         <a class="nav-link" data-nav="sec-06" href="#sec-06">06 事業・財政</a>
         <a class="nav-link" data-nav="sec-07" href="#sec-07">07 生徒支援</a>
-        <a class="nav-link" data-nav="sec-08" href="#sec-08">08 事業実績</a>
-        <a class="nav-link" data-nav="sec-09" href="#sec-09">09 FAQ</a>
+        <a class="nav-link" data-nav="sec-08" href="#sec-08">08 FAQ</a>
       </nav>
       <button id="print-btn" style="flex:none; display:flex; align-items:center; gap:7px; padding:7px 14px; border:none; border-radius:6px; background:var(--slate-700); color:#fff; font-family:var(--font-sans); font-size:16px; font-weight:500; cursor:pointer;">
         <i data-lucide="printer" style="width:16px; height:16px;"></i><span>印刷</span>
@@ -147,12 +146,11 @@
           <span>Inspection Briefing · 視察資料</span>
         </div>
         <h1 style="margin:20px 0 0; font-family:var(--font-sans); font-size:36px; font-weight:700; line-height:1.42; letter-spacing:.02em; text-wrap:balance; color:var(--slate-700);">鹿追高校支援 視察資料</h1>
-        <div style="margin-top:12px; font-size:16px; color:var(--text-muted); letter-spacing:.02em;">令和8年度予算・令和7年度事業実績　│　鹿追町教育委員会</div>
         <p class="lead" id="hero-lead" style="max-width:640px; margin-top:22px;"></p>
 
         <div class="grid-4" style="margin-top:30px;">
           <div class="card-tinted">
-            <div style="font-family:var(--font-sans); font-size:16px; letter-spacing:.06em; color:var(--sage-700); font-weight:500;">入学者数(令和7年度)</div>
+            <div style="font-family:var(--font-sans); font-size:16px; letter-spacing:.06em; color:var(--sage-700); font-weight:500;">入学者数(令和8年度)</div>
             <div id="stat-enrollment" style="margin-top:8px; font-family:var(--font-sans); font-size:28px; font-weight:700; color:var(--slate-700);">--</div>
             <div id="stat-enrollment-sub" style="margin-top:2px; font-size:16px; color:var(--text-muted);">--</div>
           </div>
@@ -185,7 +183,6 @@
         </div>
         <div class="sec-rule"></div>
         <p class="lead">鹿追町教育委員会では、地域唯一の高等学校である北海道鹿追高等学校の存続と魅力化を支えるため、通学・寄宿舎・国際交流・資格取得・探究学習など幅広い分野で高校生の学びを支援しています。人口減少が進むなかでも、生徒が安心して学び、ふるさとに誇りを持てる環境を整えることを目的としています。</p>
-        <p class="lead" style="margin-top:14px;">本資料は、視察にお越しの皆さまに、支援の背景・歴史的経緯・全国公募や学生寮の実際・財政構造・令和7年度の事業実績を、短時間で正確にご確認いただくためにまとめたものです。</p>
       </section>
 
       <!-- 02 なぜ鹿追町は鹿追高校を支援するのか -->
@@ -289,7 +286,6 @@
 
         <div class="card" style="margin-bottom:18px;">
           <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); margin-bottom:4px;">現在の入寮状況(令和8年度)</div>
-          <p style="margin:0 0 10px; font-size:16px; color:var(--text-faint);">R8鹿追高校寮入寮者一覧.csv より集計(個人情報は集計値のみ使用)</p>
           <div style="margin-top:6px; display:flex; align-items:baseline; gap:10px;">
             <span id="occ-total" style="font-family:var(--font-sans); font-size:24px; font-weight:700; color:var(--slate-700);">--</span>
             <span id="occ-rate" style="font-size:16px; color:var(--text-muted);">--</span>
@@ -316,11 +312,11 @@
         <div class="grid-2 avoid-break" style="margin-bottom:18px;">
           <div class="card">
             <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading);" id="construction-dorm-title"></div>
-            <p id="construction-dorm-body" style="margin:10px 0 0; font-size:16px; line-height:1.85; color:var(--text-body);"></p>
+            <div id="construction-dorm-body" style="margin-top:10px; font-size:16px; color:var(--text-body);"></div>
           </div>
           <div class="card">
             <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading);" id="construction-house-title"></div>
-            <p id="construction-house-body" style="margin:10px 0 0; font-size:16px; line-height:1.85; color:var(--text-body);"></p>
+            <div id="construction-house-body" style="margin-top:10px; font-size:16px; color:var(--text-body);"></div>
           </div>
         </div>
 
@@ -335,14 +331,14 @@
         <div class="grid-2 avoid-break" style="margin-bottom:18px;">
           <div class="card">
             <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading);">料金・減免制度</div>
-            <p id="pricing-text" style="margin:10px 0 0; font-size:16px; line-height:1.85; color:var(--text-body);"></p>
+            <div id="pricing-text" style="margin-top:10px; font-size:16px; color:var(--text-body);"></div>
           </div>
           <div class="card">
             <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading);">業務内容</div>
             <ul id="duties-list" style="margin:10px 0 0; padding-left:18px; font-size:16px; line-height:1.85; color:var(--text-body);"></ul>
           </div>
         </div>
-        <p id="operation-challenges" class="lead" style="font-size:16px; color:var(--text-muted);"></p>
+        <div id="operation-challenges" class="card" style="font-size:16px; color:var(--text-muted);"></div>
       </section>
 
       <!-- 06 事業内容と財政 -->
@@ -395,8 +391,8 @@
 
         <!-- 6-3 歳入内訳 -->
         <div class="card">
-          <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); margin-bottom:10px;">歳入内訳(款・目・節・細節)</div>
-          <table id="revenue-table"><thead><tr><th>款</th><th>目</th><th>節</th><th>細節</th><th style="text-align:right;">予算確定額</th></tr></thead><tbody></tbody></table>
+          <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); margin-bottom:10px;">歳入内訳</div>
+          <table id="revenue-table"><thead><tr><th>細節</th><th style="text-align:right;">予算確定額</th></tr></thead><tbody></tbody></table>
         </div>
       </section>
 
@@ -410,22 +406,11 @@
         <div id="support-list" class="grid-3"></div>
       </section>
 
-      <!-- 08 令和7年度 事業実績 -->
+      <!-- 08 よくある質問 -->
       <section id="sec-08" style="scroll-margin-top:64px; margin-top:52px;">
         <div class="sec-head">
           <span class="sec-bar"></span>
-          <div style="flex:1;"><div class="sec-eyebrow">08 · FY Reiwa 7 Results</div><h2 class="sec-title">令和7年度 事業実績</h2></div>
-        </div>
-        <div class="sec-rule"></div>
-        <p style="margin:0 0 18px; font-size:16px; line-height:1.8; color:var(--text-muted);">令和7年度に実施した高校支援事業は、以下の通りです。</p>
-        <div id="program-list" style="border:1px solid #e8ded0; border-radius:13px; overflow:hidden;"></div>
-      </section>
-
-      <!-- 09 よくある質問 -->
-      <section id="sec-09" style="scroll-margin-top:64px; margin-top:52px;">
-        <div class="sec-head">
-          <span class="sec-bar"></span>
-          <div><div class="sec-eyebrow">09 · FAQ</div><h2 class="sec-title">よくある質問</h2></div>
+          <div><div class="sec-eyebrow">08 · FAQ</div><h2 class="sec-title">よくある質問</h2></div>
         </div>
         <div class="sec-rule"></div>
         <div id="faq-list" class="card"></div>
@@ -1150,7 +1135,6 @@ window.SHIKAOI_SUMMARY = {
     "「地域おこし協力隊」事業名称かつ算定基礎内容に「鹿追高校」を含む行は、今回の歳出データ（45件）には存在せず、加算額は0円だった。"
   ]
 };
-
 </script>
 <script>
 // 令和7年度 事業実績・視察資料の本文データ(手動管理)。
@@ -1171,7 +1155,7 @@ window.SHIKAOI_CONTENT = {
     },
     {
       title: "2. 人材育成・まちづくりの中核",
-      body: "町は公式に「鹿追高校は人材育成の面においてもまちづくりの面においても、その役割は極めて重要」と位置づけています。修学資金貸付制度による進学支援を通じて「優秀な人材の育成」を町の目的として明記しており、高校教育を町の将来を担う人材育成拠点として位置づけています。",
+      body: "町は公式に「鹿追高校は人材育成の面においてもまちづくりの面においても、その役割は極めて重要」と位置づけています。鹿追町教育大綱(2023-)においても、グローバル化する社会の持続的な発展に向けて学び続ける人材の育成を基本方針の一つに掲げ、その中に一貫教育の推進を明記しており、高校教育を町の将来を担う人材育成拠点として位置づけています。",
     },
     {
       title: "3. 高校存続=地域存続(生徒確保を目的とした助成制度)",
@@ -1245,7 +1229,8 @@ window.SHIKAOI_CONTENT = {
     { year: 2021, era: "R3", internationalExchange: "covid-19により派遣事業を中止", integratedEducation: "", highSchool: "オンライン公設塾開始" },
     { year: 2022, era: "R4", internationalExchange: "友好訪問団派遣再開", integratedEducation: "", highSchool: "入学者全国募集開始" },
     { year: 2023, era: "R5", internationalExchange: "留学生・友好訪問団受入", integratedEducation: "", highSchool: "" },
-    { year: 2024, era: "R6", internationalExchange: "", integratedEducation: "", highSchool: "" },
+    { year: 2024, era: "R6", internationalExchange: "留学生・友好訪問団受入", integratedEducation: "", highSchool: "" },
+    { year: 2025, era: "R7", internationalExchange: "留学生・友好訪問団受入", integratedEducation: "", highSchool: "" },
   ],
   historyHighlight: {
     year: "2025(令和7年度)",
@@ -1263,7 +1248,7 @@ window.SHIKAOI_CONTENT = {
       "鹿追高校SNSの運用",
     ],
     origin: "多くは首都圏(特に千葉県が多いです)。その他東北から九州まで。関西圏は少ないです。道外者と同時に、札幌圏をはじめとした道内全域からも入学者が増えました。",
-    selection: "道立高校のため、北海道が定めた入学者選抜要綱に基づいて選抜されます。道内者が優先されるため、2025年度から道教委に要綱の改正を要望しています。",
+    selection: "道立高校のため、北海道が定めた入学者選抜要綱に基づいて選抜されます。道内者が優先されるため、2025年度から道教委に要綱の改正を要望しており、2026年度からは実証事業として特例校制度により道外者の募集枠が大幅に拡充されました。",
     meritDemerit: {
       merit: ["高校の活性化と「町の活性化」", "生徒の多様化と国際化による町内進学生の環境の変化"],
       demerit: ["特になし"],
@@ -1396,7 +1381,7 @@ window.SHIKAOI_CONTENT = {
     {
       title: "国際交流・語学研修",
       items: [
-        "カナダ短期留学(2年生全員、ホームステイで2週間、個人負担20,000円/総額500,000円)",
+        "カナダ短期留学(2年生全員、ホームステイで2週間、個人負担は事業費の1割/総額500,000円)",
         "2025年度から3ヶ月交換留学を開始(1〜2名)",
         "ストニィプレイン町との派遣・受入事業",
       ],
@@ -1412,35 +1397,7 @@ window.SHIKAOI_CONTENT = {
     },
   ],
 
-  // ⑧ 令和7年度 事業実績チェックリスト(全て「完了」表記)
-  programs: [
-    {
-      name: "遠距離通学費・下宿費・見学旅行費等の補助",
-      detail: "鹿追高等学校協力会補助金(通学費・下宿・見学旅行補助)、通学車両運行事業による通学環境の確保",
-    },
-    {
-      name: "高校寄宿舎(Penguin Dormitory・Penguin House)の運営・整備",
-      detail: "寮の管理運営業務委託、Penguin House増設21室の整備(令和7年度)",
-    },
-    {
-      name: "語学研修・海外交流事業",
-      detail: "カナダ短期留学引率、鹿追高校生海外派遣事業、ストニィプレイン町との派遣・受入事業",
-    },
-    {
-      name: "資格取得・検定料等の支援",
-      detail: "オンライン公設塾生を対象とした英語検定受検料助成 など",
-    },
-    {
-      name: "探究学習・地域連携(オンライン公設塾等)",
-      detail: "オンライン公設塾の運営、全国募集事業、鹿追高等学校協力会補助金による探究学習支援",
-    },
-    {
-      name: "ICT環境の整備",
-      detail: "生徒用タブレット端末(iPad)の無償貸与、校内Wi-Fiの整備",
-    },
-  ],
-
-  // ⑨ よくある質問(視察資料_FAQ.pdf より。①〜⑧に収まらなかった質問)
+  // ⑧ よくある質問(視察資料_FAQ.pdf より)
   faq: [
     {
       q: "生徒が寮を利用することとなった経緯は?",
@@ -1476,7 +1433,6 @@ window.SHIKAOI_CONTENT = {
     },
   ],
 };
-
 </script>
 <script>
 (function () {
@@ -1484,12 +1440,26 @@ window.SHIKAOI_CONTENT = {
   const C = window.SHIKAOI_CONTENT;
   const yen = (n) => "¥" + n.toLocaleString("ja-JP");
   const esc = (s) => (s == null ? "" : String(s));
+  const kvTable = (rows) =>
+    '<table style="margin-top:4px;">' +
+    rows
+      .filter((r) => r[1])
+      .map(
+        (r) =>
+          '<tr style="border-top:1px solid var(--rule-divider);"><td style="width:26%; font-weight:700; color:var(--text-heading); vertical-align:top; white-space:nowrap;">' +
+          esc(r[0]) +
+          '</td><td style="color:var(--text-body);">' +
+          esc(r[1]) +
+          "</td></tr>"
+      )
+      .join("") +
+    "</table>";
 
   // ---------- hero / stat cards ----------
-  const r7 = S.enrollment_trend.find((e) => e["年度"] === "R7") || {};
+  const r8 = S.enrollment_trend.find((e) => e["年度"] === "R8") || {};
   document.getElementById("hero-lead").textContent = C.overview.lead;
-  document.getElementById("stat-enrollment").textContent = (r7["鹿高入学者人数"] ?? "--") + "名";
-  document.getElementById("stat-enrollment-sub").textContent = "うち道外" + (r7["道外入学者"] ?? "--") + "名";
+  document.getElementById("stat-enrollment").textContent = (r8["鹿高入学者人数"] ?? "--") + "名";
+  document.getElementById("stat-enrollment-sub").textContent = "うち道外" + (r8["道外入学者"] ?? "--") + "名";
   const dormTotal = C.dormitory.facilities.find((f) => f.name === "合計");
   document.getElementById("stat-dorm").textContent = dormTotal ? dormTotal.rooms + "体制" : "--";
   document.getElementById("stat-expenditure").textContent = S.expenditure_total_display;
@@ -1726,12 +1696,24 @@ window.SHIKAOI_CONTENT = {
   document.getElementById("occ-outlook").textContent = D.occupancy.outlook;
 
   document.getElementById("construction-dorm-title").textContent = D.construction.dormitory.title;
-  document.getElementById("construction-dorm-body").textContent =
-    "所在地" + D.construction.dormitory.location + "、敷地面積" + D.construction.dormitory.site + "、" + D.construction.dormitory.structure + "、竣工" + D.construction.dormitory.completion + "。" +
-    D.construction.dormitory.rooms + "。契約:" + D.construction.dormitory.contract.method + "、契約相手方" + D.construction.dormitory.contract.contractor + "、契約金額" + D.construction.dormitory.contract.amount + "。" +
-    D.construction.dormitory.costBreakdown + " 財源:" + D.construction.dormitory.funding + "。";
+  document.getElementById("construction-dorm-body").innerHTML = kvTable([
+    ["所在地", D.construction.dormitory.location],
+    ["敷地面積", D.construction.dormitory.site],
+    ["構造", D.construction.dormitory.structure],
+    ["竣工", D.construction.dormitory.completion],
+    ["部屋構成", D.construction.dormitory.rooms],
+    ["契約方法", D.construction.dormitory.contract.method],
+    ["契約相手方", D.construction.dormitory.contract.contractor],
+    ["契約金額", D.construction.dormitory.contract.amount],
+    ["費用内訳", D.construction.dormitory.costBreakdown],
+    ["財源", D.construction.dormitory.funding],
+  ]);
   document.getElementById("construction-house-title").textContent = D.construction.house.title;
-  document.getElementById("construction-house-body").textContent = D.construction.house.content + " " + D.construction.house.costBreakdown + " 財源:" + D.construction.house.funding;
+  document.getElementById("construction-house-body").innerHTML = kvTable([
+    ["内容", D.construction.house.content],
+    ["費用内訳", D.construction.house.costBreakdown],
+    ["財源", D.construction.house.funding],
+  ]);
 
   document.getElementById("operation-dorm-text").innerHTML =
     "<b>Penguin Dormitory:</b> " + D.operation.dormitory.method + "。委託先:" + D.operation.dormitory.contractor + "。契約期間:" + D.operation.dormitory.period;
@@ -1747,10 +1729,21 @@ window.SHIKAOI_CONTENT = {
   document.getElementById("operation-house-text").innerHTML =
     "<b>Penguin House:</b> " + D.operation.house.method + "。" + D.operation.house.houseMaster + "。";
 
-  document.getElementById("pricing-text").textContent =
-    D.operation.pricing.current + "。" + D.operation.pricing.revisionDecided + "。" + D.operation.pricing.future + "。減免:" + D.operation.pricing.discount + "。背景:" + D.operation.pricing.background;
+  document.getElementById("pricing-text").innerHTML = kvTable([
+    ["現行料金", D.operation.pricing.current],
+    ["改定の決定", D.operation.pricing.revisionDecided],
+    ["今後の予定", D.operation.pricing.future],
+    ["減免", D.operation.pricing.discount],
+    ["背景", D.operation.pricing.background],
+  ]);
   document.getElementById("duties-list").innerHTML = D.operation.duties.map((d) => "<li>" + esc(d) + "</li>").join("");
-  document.getElementById("operation-challenges").textContent = "運営体制の連携: " + D.operation.management + " 今後の課題: " + D.operation.challenges;
+  const bulletize = (text) =>
+    "<ul style=\"margin:0; padding-left:18px; line-height:1.85;\">" +
+    text.split("。").map((s) => s.trim()).filter(Boolean).map((s) => "<li>" + esc(s) + "。</li>").join("") +
+    "</ul>";
+  document.getElementById("operation-challenges").innerHTML =
+    '<table><tr><td style="width:20%; font-weight:700; color:var(--text-heading); vertical-align:top; white-space:nowrap;">運営体制の連携</td><td>' + bulletize(D.operation.management) + "</td></tr>" +
+    '<tr style="border-top:1px solid var(--rule-divider);"><td style="font-weight:700; color:var(--text-heading); vertical-align:top; white-space:nowrap;">今後の課題</td><td>' + bulletize(D.operation.challenges) + "</td></tr></table>";
 
   // ---------- 06 finance ----------
   document.getElementById("exp-total-display").textContent = S.expenditure_total_display;
@@ -1805,7 +1798,7 @@ window.SHIKAOI_CONTENT = {
   C.programTypes.forEach((p) => {
     const div = document.createElement("div");
     div.className = "card-tinted avoid-break";
-    div.style.cssText = "padding:14px 16px; font-size:16px; font-weight:700; color:var(--text-heading); text-align:center; display:flex; align-items:center; justify-content:center;";
+    div.style.cssText = "padding:14px 16px; font-size:16px; line-height:1.6; font-weight:700; color:var(--text-heading); text-align:center; display:flex; align-items:center; justify-content:center;";
     div.textContent = p;
     programTypes.appendChild(div);
   });
@@ -1817,12 +1810,12 @@ window.SHIKAOI_CONTENT = {
     const tr = document.createElement("tr");
     tr.style.borderTop = "1px solid var(--rule-divider)";
     tr.innerHTML =
-      "<td>" + esc(r["款名称"]) + "</td><td>" + esc(r["目名称"]) + "</td><td>" + esc(r["節名称"]) + "</td><td>" + esc(r["細節名称"]) + '</td><td style="text-align:right; font-family:var(--font-sans); font-weight:700;">' + yen(r["予算確定額円"]) + "</td>";
+      "<td>" + esc(r["細節名称"]) + '</td><td style="text-align:right; font-family:var(--font-sans); font-weight:700;">' + yen(r["予算確定額円"]) + "</td>";
     revenueBody.appendChild(tr);
   });
   const totalTr = document.createElement("tr");
   totalTr.style.borderTop = "2px solid var(--slate-500)";
-  totalTr.innerHTML = '<td colspan="4" style="font-weight:700; font-family:var(--font-sans);">歳入合計</td><td style="text-align:right; font-family:var(--font-sans); font-weight:700; color:var(--sage-700);">' + yen(revenueTotal) + "</td>";
+  totalTr.innerHTML = '<td style="font-weight:700; font-family:var(--font-sans);">歳入合計</td><td style="text-align:right; font-family:var(--font-sans); font-weight:700; color:var(--sage-700);">' + yen(revenueTotal) + "</td>";
   revenueBody.appendChild(totalTr);
 
   // ---------- 07 student support ----------
@@ -1836,19 +1829,7 @@ window.SHIKAOI_CONTENT = {
     supportList.appendChild(div);
   });
 
-  // ---------- 08 programs ----------
-  const programList = document.getElementById("program-list");
-  C.programs.forEach((p, i) => {
-    const row = document.createElement("div");
-    row.style.cssText = "display:flex; align-items:center; gap:16px; padding:17px 22px;" + (i < C.programs.length - 1 ? " border-bottom:1px solid var(--rule-divider);" : "");
-    row.innerHTML =
-      '<div style="width:34px; height:34px; flex:none; border-radius:50%; background:var(--sage-100); border:1.5px solid var(--sage-400);"></div>' +
-      '<div style="flex:1;"><div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading);">' + esc(p.name) + "</div>" +
-      '<div style="font-size:16px; color:var(--text-muted); margin-top:2px;">' + esc(p.detail) + "</div></div>";
-    programList.appendChild(row);
-  });
-
-  // ---------- 09 faq ----------
+  // ---------- 08 faq ----------
   const faqList = document.getElementById("faq-list");
   C.faq.forEach((f) => {
     const div = document.createElement("div");
