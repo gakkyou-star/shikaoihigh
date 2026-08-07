@@ -46,6 +46,7 @@
   .sec-rule{ border-bottom:1px solid var(--rule-heading); margin:18px 0 24px; }
   .lead{ margin:0; font-size:16px; line-height:1.9; color:var(--text-body); }
   .pill{ display:inline-flex; align-items:center; gap:6px; font-family:var(--font-sans); font-size:16px; font-weight:700; padding:4px 12px; border-radius:999px; }
+  .table-scroll{ overflow-x:auto; }
 
   @media print{
     body{ background:#fff; zoom:83.3%; }
@@ -54,6 +55,11 @@
     .seg-anim{ animation:none !important; }
     .avoid-break{ break-inside:avoid; page-break-inside:avoid; }
     .sec-head, .sec-rule{ break-after:avoid; }
+    /* 横スクロールに依存する表・グラフは印刷時にページ幅へ収める(はみ出た部分が印刷されない問題への対応) */
+    .table-scroll{ overflow-x:visible !important; }
+    #construction-table{ min-width:0 !important; width:100% !important; }
+    #construction-table th, #construction-table td{ font-size:11px !important; padding:4px 5px !important; }
+    #trend-chart svg{ width:100% !important; height:auto !important; }
     @page{ size:A4 portrait; margin:14mm 12mm; }
   }
   @media (max-width:720px){
@@ -91,9 +97,11 @@
   #charter-policy-table td, #revenue-table td{ break-inside:avoid; page-break-inside:avoid; }
   .history-year{ font-family:var(--font-sans); font-weight:700; color:var(--sage-700); white-space:nowrap; width:76px; }
   .history-empty{ color:var(--text-faint); }
-  .history-col-intl{ width:30%; }
-  .history-col-edu{ width:33%; }
-  .history-col-koko{ width:33%; }
+  .history-col-intl{ width:29%; }
+  .history-col-edu{ width:32%; }
+  .history-col-koko{ width:32%; }
+  .history-col-enroll{ width:60px; text-align:right; }
+  .history-enroll{ text-align:right; font-family:var(--font-sans); white-space:nowrap; }
 
   .bar-row{ display:flex; align-items:center; gap:10px; margin:10px 0; }
   .bar-label{ width:150px; flex:none; font-size:16px; color:var(--text-body); line-height:1.5; }
@@ -215,9 +223,9 @@
 
         <div class="card avoid-break" style="margin-bottom:20px;">
           <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); margin-bottom:10px;">入学者数(出身地域別)・地元入学率の推移(平成19年度〜令和8年度)</div>
-          <div id="trend-chart" style="overflow-x:auto;"></div>
+          <div id="trend-chart" class="table-scroll"></div>
           <div id="trend-legend" style="display:flex; gap:16px; flex-wrap:wrap; margin-top:10px; font-size:16px; color:var(--text-muted);"></div>
-          <div style="margin-top:18px; overflow-x:auto;">
+          <div class="table-scroll" style="margin-top:18px;">
             <table id="trend-table">
               <thead><tr><th>年度</th><th style="text-align:right;">町内</th><th style="text-align:right;">十勝管内</th><th style="text-align:right;">道内</th><th style="text-align:right;">道外</th><th style="text-align:right;">計</th><th style="text-align:right;">地元入学率</th></tr></thead>
               <tbody></tbody>
@@ -225,10 +233,10 @@
           </div>
         </div>
 
-        <div class="card" style="margin-bottom:16px; overflow-x:auto;">
+        <div class="card table-scroll" style="margin-bottom:16px;">
           <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); margin-bottom:10px;">年表(昭和60年度〈1985〉〜令和6年度〈2024〉)</div>
           <table class="history-table">
-            <thead><tr><th>年度</th><th class="history-col-intl">国際交流</th><th class="history-col-edu">幼小中高一貫教育</th><th class="history-col-koko">鹿追高校</th></tr></thead>
+            <thead><tr><th>年度</th><th class="history-col-intl">国際交流</th><th class="history-col-edu">幼小中高一貫教育</th><th class="history-col-koko">鹿追高校</th><th class="history-col-enroll">入学者数</th></tr></thead>
             <tbody id="history-list"></tbody>
           </table>
         </div>
@@ -312,7 +320,7 @@
           <p id="occ-outlook" style="margin:14px 0 0; font-size:16px; color:var(--text-muted); line-height:1.75;"></p>
         </div>
 
-        <div class="card avoid-break" style="margin-bottom:18px; overflow-x:auto;">
+        <div class="card avoid-break table-scroll" style="margin-bottom:18px;">
           <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); margin-bottom:10px;">整備実績</div>
           <table id="construction-table" style="table-layout:fixed; min-width:1200px;">
             <colgroup>
@@ -1269,7 +1277,7 @@ window.SHIKAOI_CONTENT = {
     basicPolicy: "5つの基本的な方針の1つ目「グローバル化する社会の持続的な発展に向けて学び続ける人材の育成」の中に「新たな教育システムとしての一貫教育の推進」が明記されており、鹿追町の幼小中高一貫教育・高校支援の政策的な土台になっています。",
     relatedPolicies: [
       { policy: "政策1 グローバル社会における人材育成", detail: "施策「高等学校の国際化」として、カナダ姉妹校提携に向けた支援を位置づけ" },
-      { policy: "政策2 イノベーションを担う人材育成", detail: "福原治平青少年育成事業基金を活用し、鹿追高校の「地域みらい留学」への支援を位置づけ" },
+      { policy: "政策2 イノベーションを担う人材育成", detail: "福原治平青少年育成事業基金を活用し、鹿追高校の「海外留学」への支援を位置づけ" },
       { policy: "政策5 確かな学力の育成、幅広い知識と教養・専門的能力・職業実践力の育成", detail: "施策「高等学校教育支援」として、鹿追高等学校に通う家庭の経済的支援の充実、国際バカロレア認定に向けた支援、高校・地域・行政機関等との連携協力体制を担うコーディネーターの配置、公設塾での多様な学習ニーズへの対応、カナダ姉妹校提携支援を位置づけ。あわせて幼小中高一貫教育の特色あるカリキュラム編成・指導体制の情報発信も明記" },
       { policy: "政策13 経済的状況、地理的条件によらない学びの確保", detail: "施策「教育費負担の軽減に向けた経済的支援」として、鹿追高等学校に通う家庭への入学・通学・寮生活の経済的支援を位置づけ" },
     ],
@@ -1395,11 +1403,11 @@ window.SHIKAOI_CONTENT = {
         floorArea: "1棟69.56㎡",
         structure: "木造平屋建て",
         rooms: "教職員住宅3棟6戸を改修し生徒12部屋(4戸)、ハウスマスター1戸、食堂1戸を整備",
-        costTotal: "38,000千円",
-        costTotalKyen: 38000,
+        costTotal: "37,282千円",
+        costTotalKyen: 37282,
         costBreakdown: [
-          { label: "修繕工事", amountKyen: 36400 },
-          { label: "備品購入", amountKyen: 1600 },
+          { label: "修繕工事", amountKyen: 34138 },
+          { label: "備品購入", amountKyen: 3144 },
         ],
         funding: "一般財源",
       },
@@ -1413,11 +1421,12 @@ window.SHIKAOI_CONTENT = {
         floorArea: "646.06㎡",
         structure: "木造平屋建て",
         rooms: "生徒居住棟4棟(1棟10部屋、生徒分合計40室)+食堂・交流棟1棟、ハウスマスター棟1棟2戸(ハウスマスター2室)",
-        costTotal: "395,428千円",
-        costTotalKyen: 395428,
+        costTotal: "402,215千円",
+        costTotalKyen: 402215,
         costBreakdown: [
           { label: "建設工事", amountKyen: 364540 },
           { label: "外構工事", amountKyen: 30888 },
+          { label: "備品購入", amountKyen: 6787 },
         ],
         funding: "一般財源",
       },
@@ -1431,16 +1440,17 @@ window.SHIKAOI_CONTENT = {
         floorArea: "1棟69.85㎡",
         structure: "木造平屋建て",
         rooms: "生徒居住棟7棟+ハウスマスター棟1棟を改修し21室を増設",
-        costTotal: "62,000千円",
-        costTotalKyen: 62000,
+        costTotal: "64,368千円",
+        costTotalKyen: 64368,
         costBreakdown: [
-          { label: "修繕工事", amountKyen: 62000 },
+          { label: "修繕工事", amountKyen: 56705 },
+          { label: "備品購入", amountKyen: 7663 },
         ],
         funding: [
           { label: "地方創生推進交付金(新しい地方経済・生活環境創生交付金)" },
-          { label: "国庫補助金", value: "31,000千円" },
-          { label: "一般財源", value: "31,000千円" },
-          { label: "合計", value: "62,000千円", total: true },
+          { label: "国庫補助金", value: "28,352千円" },
+          { label: "一般財源", value: "28,353千円" },
+          { label: "合計", value: "56,705千円", total: true },
         ],
       },
       diningHall: {
@@ -1453,17 +1463,17 @@ window.SHIKAOI_CONTENT = {
         floorArea: "223.16㎡",
         structure: "木造平屋建て",
         rooms: "食堂(4人掛け×3・6人掛け×3、合計30席)+談話室(4人掛け×1・6人掛け×1、合計10席)、トイレ(調理員用1・生徒用2)",
-        costTotal: "70,335千円",
-        costTotalKyen: 70335,
+        costTotal: "71,469千円",
+        costTotalKyen: 71469,
         costBreakdown: [
-          { label: "修繕工事", amountKyen: 67000 },
-          { label: "備品購入", amountKyen: 3335 },
+          { label: "修繕工事", amountKyen: 71192 },
+          { label: "備品購入", amountKyen: 277 },
         ],
         funding: [
           { label: "地方創生推進交付金(新しい地方経済・生活環境創生交付金)" },
-          { label: "国庫補助金", value: "33,500千円" },
-          { label: "一般財源", value: "36,835千円" },
-          { label: "合計", value: "70,335千円", total: true },
+          { label: "国庫補助金", value: "35,596千円" },
+          { label: "一般財源", value: "35,596千円" },
+          { label: "合計", value: "71,192千円", total: true },
         ],
       },
       landscaping: {
@@ -1845,13 +1855,17 @@ window.SHIKAOI_CONTENT = {
 
   const historyList = document.getElementById("history-list");
   const historyCell = (text) => (text ? esc(text) : '<span class="history-empty">―</span>');
+  const historyEnrollByYear = {};
+  S.enrollment_trend.forEach((e) => { if (e["西暦"] != null) historyEnrollByYear[e["西暦"]] = e["鹿高入学者人数"]; });
   C.history.forEach((h) => {
     const row = document.createElement("tr");
+    const enroll = historyEnrollByYear[h.year];
     row.innerHTML =
       '<td class="history-year">' + esc(h.year) + "(" + esc(h.era) + ")</td>" +
       "<td>" + historyCell(h.internationalExchange) + "</td>" +
       "<td>" + historyCell(h.integratedEducation) + "</td>" +
-      "<td>" + historyCell(h.highSchool) + "</td>";
+      "<td>" + historyCell(h.highSchool) + "</td>" +
+      '<td class="history-enroll">' + (enroll != null ? esc(enroll) + "名" : '<span class="history-empty">―</span>') + "</td>";
     historyList.appendChild(row);
   });
 
