@@ -217,6 +217,12 @@
           <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); margin-bottom:10px;">入学者数(出身地域別)・地元入学率の推移(平成19年度〜令和8年度)</div>
           <div id="trend-chart" style="overflow-x:auto;"></div>
           <div id="trend-legend" style="display:flex; gap:16px; flex-wrap:wrap; margin-top:10px; font-size:16px; color:var(--text-muted);"></div>
+          <div style="margin-top:18px; overflow-x:auto;">
+            <table id="trend-table">
+              <thead><tr><th>年度</th><th style="text-align:right;">町内</th><th style="text-align:right;">十勝管内</th><th style="text-align:right;">道内</th><th style="text-align:right;">道外</th><th style="text-align:right;">計</th><th style="text-align:right;">地元入学率</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
         </div>
 
         <div class="card" style="margin-bottom:16px; overflow-x:auto;">
@@ -288,32 +294,33 @@
           <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); margin-bottom:4px;">現在の入寮状況(令和8年度)</div>
           <div style="margin-top:6px; display:flex; align-items:baseline; gap:10px;">
             <span id="occ-total" style="font-family:var(--font-sans); font-size:24px; font-weight:700; color:var(--slate-700);">--</span>
+            <span id="occ-gender" style="font-size:16px; color:var(--text-muted);">--</span>
             <span id="occ-rate" style="font-size:16px; color:var(--text-muted);">--</span>
           </div>
           <div id="occ-by-facility" style="margin-top:16px; display:flex; flex-direction:column; gap:18px;"></div>
           <div id="occ-legend" style="display:flex; gap:14px; flex-wrap:wrap; margin-top:10px; font-size:16px; color:var(--text-muted);"></div>
-          <div style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+          <div style="margin-top:20px; display:grid; grid-template-columns:1fr 1fr; gap:24px;">
             <div>
-              <div style="font-size:16px; color:var(--text-muted); margin-bottom:6px;">学年別内訳</div>
-              <div id="occ-by-grade"></div>
+              <div style="font-size:16px; color:var(--text-muted); margin-bottom:6px;">学年別・男女別内訳</div>
+              <table id="occ-grade-table"><thead><tr><th>学年</th><th style="text-align:right;">男</th><th style="text-align:right;">女</th><th style="text-align:right;">計</th></tr></thead><tbody></tbody></table>
             </div>
             <div>
-              <div style="font-size:16px; color:var(--text-muted); margin-bottom:6px;">都道府県別人数</div>
-              <div id="occ-by-prefecture"></div>
+              <div style="font-size:16px; color:var(--text-muted); margin-bottom:6px;">都道府県別・男女別内訳</div>
+              <table id="occ-prefecture-table"><thead><tr><th>都道府県</th><th style="text-align:right;">男</th><th style="text-align:right;">女</th><th style="text-align:right;">計</th></tr></thead><tbody></tbody></table>
             </div>
           </div>
           <p id="occ-outlook" style="margin:14px 0 0; font-size:16px; color:var(--text-muted); line-height:1.75;"></p>
         </div>
 
-        <div class="grid-2 avoid-break" style="margin-bottom:18px;">
-          <div class="card">
-            <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading);" id="construction-dorm-title"></div>
-            <div id="construction-dorm-body" style="margin-top:10px; font-size:16px; color:var(--text-body);"></div>
-          </div>
-          <div class="card">
-            <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading);" id="construction-house-title"></div>
-            <div id="construction-house-body" style="margin-top:10px; font-size:16px; color:var(--text-body);"></div>
-          </div>
+        <div class="card avoid-break" style="margin-bottom:18px; overflow-x:auto;">
+          <div style="font-family:var(--font-sans); font-weight:700; font-size:16px; color:var(--text-heading); margin-bottom:10px;">整備実績</div>
+          <table id="construction-table" style="table-layout:fixed; min-width:1200px;">
+            <colgroup>
+              <col style="width:12%;"><col style="width:17.6%;"><col style="width:17.6%;"><col style="width:17.6%;"><col style="width:17.6%;"><col style="width:17.6%;">
+            </colgroup>
+            <thead><tr><th>項目</th><th>シェアハウス</th><th>ドミトリー</th><th>シェアハウス増設</th><th>食堂</th><th>シェアハウス外構緑化工事</th></tr></thead>
+            <tbody></tbody>
+          </table>
         </div>
 
         <div class="card avoid-break" style="margin-bottom:18px;">
@@ -1030,6 +1037,8 @@ window.SHIKAOI_SUMMARY = {
   ],
   "dormitory_current": {
     "total": 48,
+    "male": 20,
+    "female": 28,
     "by_facility": [
       {
         "name": "Penguin Dormitory",
@@ -1109,69 +1118,101 @@ window.SHIKAOI_SUMMARY = {
     "by_grade": [
       {
         "grade": "1年生",
-        "count": 6
+        "count": 6,
+        "male": 2,
+        "female": 4
       },
       {
         "grade": "2年生",
-        "count": 26
+        "count": 26,
+        "male": 9,
+        "female": 17
       },
       {
         "grade": "3年生",
-        "count": 16
+        "count": 16,
+        "male": 9,
+        "female": 7
       }
     ],
     "by_prefecture": [
       {
         "prefecture": "北海道",
-        "count": 27
+        "count": 27,
+        "male": 11,
+        "female": 16
       },
       {
         "prefecture": "千葉県",
-        "count": 4
+        "count": 4,
+        "male": 1,
+        "female": 3
       },
       {
         "prefecture": "神奈川県",
-        "count": 4
+        "count": 4,
+        "male": 2,
+        "female": 2
       },
       {
         "prefecture": "長野県",
-        "count": 3
+        "count": 3,
+        "male": 2,
+        "female": 1
       },
       {
         "prefecture": "大阪府",
-        "count": 2
+        "count": 2,
+        "male": 1,
+        "female": 1
       },
       {
         "prefecture": "海外",
-        "count": 1
+        "count": 1,
+        "male": 1,
+        "female": 0
       },
       {
         "prefecture": "埼玉県",
-        "count": 1
+        "count": 1,
+        "male": 1,
+        "female": 0
       },
       {
         "prefecture": "青森県",
-        "count": 1
+        "count": 1,
+        "male": 0,
+        "female": 1
       },
       {
         "prefecture": "栃木県",
-        "count": 1
+        "count": 1,
+        "male": 0,
+        "female": 1
       },
       {
         "prefecture": "沖縄県",
-        "count": 1
+        "count": 1,
+        "male": 0,
+        "female": 1
       },
       {
         "prefecture": "岐阜県",
-        "count": 1
+        "count": 1,
+        "male": 0,
+        "female": 1
       },
       {
         "prefecture": "群馬県",
-        "count": 1
+        "count": 1,
+        "male": 1,
+        "female": 0
       },
       {
         "prefecture": "茨城県",
-        "count": 1
+        "count": 1,
+        "male": 0,
+        "female": 1
       }
     ]
   },
@@ -1338,28 +1379,114 @@ window.SHIKAOI_CONTENT = {
       capacityTotal: 73,
       outlook: "1学年25名×3学年=最大75名の受入を想定。令和7年度の増設完了により73室体制となり、最大73名まで収容可能です。",
     },
+    // 整備実績(シェアハウス/ドミトリー/シェアハウス増設/食堂/シェアハウス外構緑化工事)は表組で一覧表示する。
+    // 費用内訳は「修繕工事・備品購入・建設工事・外構工事」の4区分(工事区分と金額のみ)に統一して再集計している。
+    // costBreakdownは amountKyen(千円、数値)で保持し、costTotalKyenとの差額があれば表示時に「その他」として自動計上する。
+    // 出典: シェアハウス=R5.9月全協・委員会説明書、ドミトリー=既存契約資料、
+    //       シェアハウス増設=既存資料、食堂・外構緑化工事=R7.9月委員会説明書ほか
     construction: {
+      shareHouse: {
+        title: "Penguin House(シェアハウスタイプ)令和5年度整備",
+        year: "令和5年度",
+        category: "リノベーション",
+        roomCount: "12室",
+        content: "老朽化した教職員住宅3棟6戸を改修し、12部屋を整備。木造建築の改修工事(内部塗装、屋根改修、給水設備入れ替え、トイレ改修、フローリング改修等)。",
+        location: "緑町2丁目1番地",
+        floorArea: "1棟69.56㎡",
+        structure: "木造平屋建て",
+        rooms: "教職員住宅3棟6戸を改修し生徒12部屋(4戸)、ハウスマスター1戸、食堂1戸を整備",
+        costTotal: "38,000千円",
+        costTotalKyen: 38000,
+        costBreakdown: [
+          { label: "修繕工事", amountKyen: 36400 },
+          { label: "備品購入", amountKyen: 1600 },
+        ],
+        funding: "一般財源",
+      },
       dormitory: {
         title: "Penguin Dormitory(ドミトリータイプ)令和6年度整備",
-        location: "鹿追町元町4丁目12番地1",
-        site: "5,750㎡",
+        year: "令和6年度",
+        category: "新築",
+        roomCount: "40室",
+        content: "生徒居住棟4棟(1棟10部屋)+食堂・交流棟1棟、ハウスマスター棟1棟2戸を新築整備。",
+        location: "元町4丁目12番地1",
+        floorArea: "646.06㎡",
         structure: "木造平屋建て",
-        completion: "令和6年度末",
-        rooms: "生徒居住棟4棟(1棟10部屋)+食堂・交流棟1棟、ハウスマスター棟1棟2戸、合計40部屋",
-        contract: {
-          purpose: "鹿追高等学校寄宿舎新築工事",
-          method: "随意契約",
-          amount: "364,540,000円",
-          contractor: "株式会社アーキビジョン21(千歳市)",
-        },
-        costBreakdown: "建築工事331,400千円(税込364,540千円)、外構工事28,080千円(税込30,888千円)。予算合計396,000千円、実際の契約額395,428千円。",
-        funding: "地方債356,400千円(90%)、一般財源39,600千円(10%)",
+        rooms: "生徒居住棟4棟(1棟10部屋、生徒分合計40室)+食堂・交流棟1棟、ハウスマスター棟1棟2戸(ハウスマスター2室)",
+        costTotal: "395,428千円",
+        costTotalKyen: 395428,
+        costBreakdown: [
+          { label: "建設工事", amountKyen: 364540 },
+          { label: "外構工事", amountKyen: 30888 },
+        ],
+        funding: "一般財源",
       },
-      house: {
+      shareHouseExt: {
         title: "Penguin House(シェアハウスタイプ)令和7年度増設",
-        content: "既設12室に加えて21室を増設。木造建築の改修工事(内部塗装、屋根改修、給水設備入れ替え、トイレ改修、フローリング改修等)。竣工予定は令和7年度内。",
-        costBreakdown: "生徒居住棟7,500千円×7箇所=52,500千円、ハウスマスター棟9,500千円×1箇所。合計62,000千円。",
-        funding: "内閣府「新しい地方経済・生活環境創生交付金」(2分の1補助)。国庫補助金31,000千円、町債27,900千円、一般財源3,100千円。",
+        year: "令和7年度",
+        category: "リノベーション",
+        roomCount: "21室",
+        content: "既設12室に加えて21室を増設。木造建築の改修工事(内部塗装、屋根改修、給水設備入れ替え、トイレ改修、フローリング改修等)。",
+        location: "緑町2丁目2番地",
+        floorArea: "1棟69.85㎡",
+        structure: "木造平屋建て",
+        rooms: "生徒居住棟7棟+ハウスマスター棟1棟を改修し21室を増設",
+        costTotal: "62,000千円",
+        costTotalKyen: 62000,
+        costBreakdown: [
+          { label: "修繕工事", amountKyen: 62000 },
+        ],
+        funding: [
+          { label: "地方創生推進交付金(新しい地方経済・生活環境創生交付金)" },
+          { label: "国庫補助金", value: "31,000千円" },
+          { label: "一般財源", value: "31,000千円" },
+          { label: "合計", value: "62,000千円", total: true },
+        ],
+      },
+      diningHall: {
+        title: "食堂棟 令和7年度整備",
+        year: "令和7年度",
+        category: "リノベーション",
+        roomCount: "40席",
+        content: "ペンギンハウスエリアに食堂棟を新設整備。食堂30席・談話室10席を配置し、壁・床・天井の内装改修、外構・熱源整備を実施。",
+        location: "緑町1丁目15番地",
+        floorArea: "223.16㎡",
+        structure: "木造平屋建て",
+        rooms: "食堂(4人掛け×3・6人掛け×3、合計30席)+談話室(4人掛け×1・6人掛け×1、合計10席)、トイレ(調理員用1・生徒用2)",
+        costTotal: "70,335千円",
+        costTotalKyen: 70335,
+        costBreakdown: [
+          { label: "修繕工事", amountKyen: 67000 },
+          { label: "備品購入", amountKyen: 3335 },
+        ],
+        funding: [
+          { label: "地方創生推進交付金(新しい地方経済・生活環境創生交付金)" },
+          { label: "国庫補助金", value: "33,500千円" },
+          { label: "一般財源", value: "36,835千円" },
+          { label: "合計", value: "70,335千円", total: true },
+        ],
+      },
+      landscaping: {
+        title: "シェアハウス外構緑化工事 令和8年度整備",
+        year: "令和8年度",
+        category: "外構工事",
+        roomCount: "居住棟10棟+食堂棟",
+        content: "芝生緑化工事。",
+        location: "緑町1丁目15番地、2丁目1-2番地",
+        floorArea: "―",
+        structure: "―",
+        rooms: "―",
+        costTotal: "17,039千円",
+        costTotalKyen: 17039,
+        costBreakdown: [
+          { label: "外構工事", amountKyen: 17039 },
+        ],
+        funding: [
+          { label: "地方創生推進交付金(新しい地方経済・生活環境創生交付金)" },
+          { label: "国庫補助金", value: "8,519千円" },
+          { label: "一般財源", value: "8,520千円" },
+          { label: "合計", value: "17,039千円", total: true },
+        ],
       },
     },
     operation: {
@@ -1372,7 +1499,15 @@ window.SHIKAOI_CONTENT = {
           { year: "令和8年度", fixed: "36,157,220円", variable: "9,504,000円", total: "45,661,220円" },
           { year: "令和9年度", fixed: "36,497,120円", variable: "9,504,000円", total: "46,001,120円" },
         ],
-        costDetailR7: "人件費関係22,141,182円(給与・賞与・社会保険料等)、運営経費6,730,000円(消耗品費・備品費・報酬費・ごみ処理費・保険料・手数料・通信費・PC/OA機器等・事務所経費・車リース・研修費・募集費・車燃料費・草刈り除雪費用等)、管理費等9,350,738円(本部/支店経費・消費税)。固定委託費合計38,221,920円+変動費(食事代)9,504,000円=年間合計47,725,920円。3年間総委託費139,388,260円(税込)。",
+        costDetailR7Items: [
+          { label: "人件費関係", note: "給与・賞与・社会保険料等", value: "22,141,182円" },
+          { label: "運営経費", note: "消耗品費・備品費・報酬費・ごみ処理費・保険料・手数料・通信費・PC/OA機器等・事務所経費・車リース・研修費・募集費・車燃料費・草刈り除雪費用等", value: "6,730,000円" },
+          { label: "管理費等", note: "本部/支店経費・消費税", value: "9,350,738円" },
+          { label: "固定委託費合計", value: "38,221,920円", total: true },
+          { label: "変動費(食事代)", value: "9,504,000円" },
+          { label: "年間合計", value: "47,725,920円", total: true },
+          { label: "3年間総委託費(税込)", value: "139,388,260円", total: true },
+        ],
         revenue: "令和7年度の寮費収入は16,800,000円(35,000円×40名×12ヶ月)。入寮者数により変動。",
         costBurden: "町負担:施設・設備、光熱水費、什器備品、検査保安料、特別清掃等。受託者負担:食材費、人件費、消耗品費、調理道具、清掃費、通信代等。",
       },
@@ -1523,6 +1658,48 @@ window.SHIKAOI_CONTENT = {
     "<ul style=\"margin:0; padding-left:18px; line-height:1.85;\">" +
     text.split("。").map((s) => s.trim()).filter(Boolean).map((s) => "<li>" + esc(s) + "。</li>").join("") +
     "</ul>";
+  // 費用内訳・財源など「項目:金額」の内訳を罫線区切りの表で表示する。
+  const costList = (items) =>
+    '<table style="width:100%;">' +
+    items
+      .map((it, i) => {
+        const top = i > 0 ? ' style="border-top:1px solid var(--rule-divider);"' : "";
+        if (it.value == null) {
+          return "<tr" + top + '><td colspan="2" style="padding:5px 0; color:var(--text-muted);">' + esc(it.label) + "</td></tr>";
+        }
+        return (
+          "<tr" + top + ">" +
+          '<td style="padding:5px 8px 5px 0; vertical-align:top;">' + esc(it.label) +
+          (it.note ? "<br><span style=\"color:var(--text-faint);\">" + esc(it.note) + "</span>" : "") +
+          "</td>" +
+          '<td style="padding:5px 0; text-align:right; white-space:nowrap; vertical-align:top;' +
+          (it.total ? " font-weight:700; color:var(--text-heading);" : "") +
+          '">' + esc(it.value) + "</td>" +
+          "</tr>"
+        );
+      })
+      .join("") +
+    "</table>";
+  const fmtKyen = (n) => n.toLocaleString("ja-JP") + "千円";
+  // 整備実績の費用内訳: 工事区分と金額のみを表示する。区分合計と事業費に差額があれば「その他」として計上する。
+  const costBreakdownList = (items, totalKyen) => {
+    const sum = items.reduce((s, it) => s + it.amountKyen, 0);
+    const rows = items.slice();
+    if (totalKyen - sum > 0) rows.push({ label: "その他", amountKyen: totalKyen - sum });
+    return (
+      '<table style="width:100%;">' +
+      rows
+        .map(
+          (it, i) =>
+            "<tr" + (i > 0 ? ' style="border-top:1px solid var(--rule-divider);"' : "") + ">" +
+            '<td style="padding:5px 8px 5px 0;">' + esc(it.label) + "</td>" +
+            '<td style="padding:5px 0; text-align:right; white-space:nowrap;">' + fmtKyen(it.amountKyen) + "</td>" +
+            "</tr>"
+        )
+        .join("") +
+      "</table>"
+    );
+  };
 
   // ---------- hero / stat cards ----------
   const r8 = S.enrollment_trend.find((e) => e["年度"] === "R8") || {};
@@ -1649,6 +1826,20 @@ window.SHIKAOI_CONTENT = {
     '<span><span style="display:inline-block; width:11px; height:11px; background:var(--amber-500); margin-right:5px; vertical-align:middle; border-radius:2px;"></span>道外</span>' +
     '<span><span style="display:inline-block; width:14px; height:2px; background:var(--danger-500); margin-right:6px; vertical-align:middle;"></span>地元入学率(町内÷総入学者、%・右軸)</span>';
 
+  const eraLabel = (d) => (typeof d["年度"] === "number" ? "H" + d["年度"] : d["年度"]);
+  const trendBody = document.querySelector("#trend-table tbody");
+  trendData.forEach((d) => {
+    const tr = document.createElement("tr");
+    tr.style.borderTop = "1px solid var(--rule-divider)";
+    const cell = (v) => '<td style="text-align:right;">' + (v == null ? "―" : v) + "</td>";
+    tr.innerHTML =
+      "<td>" + esc(d["西暦"]) + "年度(" + esc(eraLabel(d)) + ")</td>" +
+      cell(d["町内入学者"]) + cell(d["管内入学者"]) + cell(d["道内入学者"]) + cell(d["道外入学者"]) +
+      '<td style="text-align:right; font-weight:700;">' + (d["鹿高入学者人数"] ?? "―") + "</td>" +
+      '<td style="text-align:right;">' + (d["地元入学率パーセント"] != null ? d["地元入学率パーセント"] + "%" : "―") + "</td>";
+    trendBody.appendChild(tr);
+  });
+
   document.getElementById("history-highlight-year").textContent = C.historyHighlight.year;
   document.getElementById("history-highlight-note").textContent = C.historyHighlight.note;
 
@@ -1699,6 +1890,7 @@ window.SHIKAOI_CONTENT = {
 
   const DC = S.dormitory_current;
   document.getElementById("occ-total").textContent = DC.total + "名";
+  document.getElementById("occ-gender").textContent = "(男" + DC.male + "名・女" + DC.female + "名)";
   document.getElementById("occ-rate").textContent = "全体利用率 " + (Math.round((DC.total / D.occupancy.capacityTotal) * 1000) / 10) + "%(定員" + D.occupancy.capacityTotal + "名に対して)";
 
   // 部屋番号インフォグラフィック: 1マス=1室(定員1名)。性別は色相(男子=slate系、女子=sage系)、
@@ -1765,48 +1957,56 @@ window.SHIKAOI_CONTENT = {
     GRADE_SHADES.female.map((s) => swatch(s.color, "女子" + s.grade)).join("") +
     swatch("#eae2d4", "空室");
 
-  const gradeWrap = document.getElementById("occ-by-grade");
-  const gradeMax = Math.max.apply(null, DC.by_grade.map((g) => g.count));
-  DC.by_grade.forEach((g) => {
-    const row = document.createElement("div");
-    row.className = "bar-row";
-    row.innerHTML =
-      '<div class="bar-label">' + esc(g.grade) + '</div><div class="bar-track"><div class="bar-fill" style="width:' + ((g.count / gradeMax) * 100).toFixed(1) + '%; background:var(--sage-500);"></div></div>' +
-      '<div class="bar-value">' + g.count + "名</div>";
-    gradeWrap.appendChild(row);
-  });
+  function occTableRow(label, male, female, isTotal) {
+    const tr = document.createElement("tr");
+    tr.style.borderTop = isTotal ? "2px solid var(--rule-heading)" : "1px solid var(--rule-divider)";
+    if (isTotal) tr.style.fontWeight = "700";
+    tr.innerHTML =
+      "<td>" + esc(label) + "</td>" +
+      '<td style="text-align:right;">' + male + "</td>" +
+      '<td style="text-align:right;">' + female + "</td>" +
+      '<td style="text-align:right;">' + (male + female) + "</td>";
+    return tr;
+  }
+  const gradeBody = document.querySelector("#occ-grade-table tbody");
+  DC.by_grade.forEach((g) => gradeBody.appendChild(occTableRow(g.grade, g.male, g.female, false)));
+  gradeBody.appendChild(occTableRow("計", DC.male, DC.female, true));
 
-  const prefWrap = document.getElementById("occ-by-prefecture");
-  const prefMax = Math.max.apply(null, DC.by_prefecture.map((p) => p.count));
-  DC.by_prefecture.forEach((p) => {
-    const row = document.createElement("div");
-    row.className = "bar-row";
-    row.innerHTML =
-      '<div class="bar-label">' + esc(p.prefecture) + '</div><div class="bar-track"><div class="bar-fill" style="width:' + ((p.count / prefMax) * 100).toFixed(1) + '%; background:var(--slate-500);"></div></div>' +
-      '<div class="bar-value">' + p.count + "名</div>";
-    prefWrap.appendChild(row);
-  });
+  const prefBody = document.querySelector("#occ-prefecture-table tbody");
+  DC.by_prefecture.forEach((p) => prefBody.appendChild(occTableRow(p.prefecture, p.male, p.female, false)));
+  prefBody.appendChild(occTableRow("計", DC.male, DC.female, true));
+
   document.getElementById("occ-outlook").textContent = D.occupancy.outlook;
 
-  document.getElementById("construction-dorm-title").textContent = D.construction.dormitory.title;
-  document.getElementById("construction-dorm-body").innerHTML = kvTable([
-    ["所在地", D.construction.dormitory.location],
-    ["敷地面積", D.construction.dormitory.site],
-    ["構造", D.construction.dormitory.structure],
-    ["竣工", D.construction.dormitory.completion],
-    ["部屋構成", D.construction.dormitory.rooms],
-    ["契約方法", D.construction.dormitory.contract.method],
-    ["契約相手方", D.construction.dormitory.contract.contractor],
-    ["契約金額", D.construction.dormitory.contract.amount],
-    ["費用内訳", D.construction.dormitory.costBreakdown],
-    ["財源", D.construction.dormitory.funding],
-  ]);
-  document.getElementById("construction-house-title").textContent = D.construction.house.title;
-  document.getElementById("construction-house-body").innerHTML = kvTable([
-    ["内容", D.construction.house.content],
-    ["費用内訳", D.construction.house.costBreakdown],
-    ["財源", D.construction.house.funding],
-  ]);
+  const CONSTRUCTION_COLS = [D.construction.shareHouse, D.construction.dormitory, D.construction.shareHouseExt, D.construction.diningHall, D.construction.landscaping];
+  const CONSTRUCTION_ROWS = [
+    ["整備年度", "year"],
+    ["整備区分", "category"],
+    ["整備室数", "roomCount"],
+    ["内容", "content"],
+    ["所在地", "location"],
+    ["延床面積", "floorArea"],
+    ["構造", "structure"],
+    ["部屋構成", "rooms"],
+    ["事業費", "costTotal"],
+    ["費用内訳", "costBreakdown"],
+    ["財源", "funding"],
+  ];
+  const constructionBody = document.querySelector("#construction-table tbody");
+  CONSTRUCTION_ROWS.forEach(([label, key]) => {
+    const tr = document.createElement("tr");
+    tr.style.borderTop = "1px solid var(--rule-divider)";
+    tr.innerHTML =
+      '<td style="font-weight:700; white-space:nowrap; vertical-align:top;">' + esc(label) + "</td>" +
+      CONSTRUCTION_COLS.map((c) => {
+        let cell;
+        if (key === "costBreakdown") cell = costBreakdownList(c.costBreakdown, c.costTotalKyen);
+        else if (Array.isArray(c[key])) cell = costList(c[key]);
+        else cell = esc(c[key]);
+        return '<td style="vertical-align:top;">' + cell + "</td>";
+      }).join("");
+    constructionBody.appendChild(tr);
+  });
 
   document.getElementById("operation-dorm-text").innerHTML =
     "<b>Penguin Dormitory:</b> " + D.operation.dormitory.method + "。委託先:" + D.operation.dormitory.contractor + "。契約期間:" + D.operation.dormitory.period;
@@ -1818,7 +2018,7 @@ window.SHIKAOI_CONTENT = {
     costBody.appendChild(tr);
   });
   document.getElementById("operation-dorm-detail").innerHTML = kvTableHtml([
-    ["委託費内訳(令和7年度)", bulletize(D.operation.dormitory.costDetailR7)],
+    ["委託費内訳(令和7年度)", costList(D.operation.dormitory.costDetailR7Items)],
     ["寮費収入", bulletize(D.operation.dormitory.revenue)],
     ["費用負担", bulletize(D.operation.dormitory.costBurden)],
   ]);
