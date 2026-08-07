@@ -1855,7 +1855,7 @@ window.SHIKAOI_CONTENT = {
 
   const historyList = document.getElementById("history-list");
   const historyCell = (text) => (text ? esc(text) : '<span class="history-empty">―</span>');
-  const historyEnrollByYear = {};
+  const historyEnrollByYear = { 1985: 63 }; // 1985は鹿高入学者推移.xlsx(1986年度〜)に含まれないため一貫教育説明資料.pdfの記載値を補完
   S.enrollment_trend.forEach((e) => { if (e["西暦"] != null) historyEnrollByYear[e["西暦"]] = e["鹿高入学者人数"]; });
   C.history.forEach((h) => {
     const row = document.createElement("tr");
